@@ -26,9 +26,9 @@ function Header() {
             More
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a className="dropdown-item" href="#">Action</a></li>
-            <li><a className="dropdown-item" href="#">Another action</a></li>
-            <li><a className="dropdown-item" href="#">Something else here</a></li>
+            <li><a className="dropdown-item" href="/addStock">Add Stocks</a></li>
+            <li><a className="dropdown-item" href="#">Suppliers</a></li>
+            <li><a className="dropdown-item" href="#">Feedback</a></li>
           </ul>
         </li>
       </ul>

@@ -1,17 +1,23 @@
 import './App.css';
-//import { BrowserRouter as BRouter, Switch, Route,Link } from "react-router-dom";
+import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
 
 
 //IT20197032 - Sayuri
 import Header from './components/Header';
-import addStock from './components/addStock';
+import AddStock from './components/AddStock';
+
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Route exact path="/addStock" component={addStock} />
-    </div>
+    <Router>
+      <div>
+        <Header/>
+        <Routes>
+        <Route exact path="/addStock" element={<AddStock />} />
+        </Routes>
+
+      </div>
+    </Router>
   );
 }
 
