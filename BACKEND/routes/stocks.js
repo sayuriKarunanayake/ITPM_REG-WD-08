@@ -36,7 +36,7 @@ router.route("/add").post((req,res)=>{
 })
 
 //get all details to frontend route
-router.route("/").get((req,res)=>{
+router.route("/getallstock").get((req,res)=>{
     Stock.find().then((staff)=>{
         res.json(staff)
     }).catch((err)=>{
