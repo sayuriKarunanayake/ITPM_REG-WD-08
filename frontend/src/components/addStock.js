@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import axios from "axios";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function AddStock(){
-    const[stockCode,setStockCode] = useState("");
+    const [stockCode,setStockCode] = useState("");
     const [category,setCategory] = useState("");
     const [manufacturer,setManufacturer]=useState(""); 
     const [supplier,setSupplier] = useState("");
@@ -36,16 +36,18 @@ export default function AddStock(){
 
         axios.post("http://localhost:8070/stock/add",newStock).then(()=>{
             alert("Stock added sucessfully");
-            //window.location = `/allStock`;
+            window.location = `/viewStock`;
         }).catch((err)=>{
             alert(err.response.data.message);
             console.log(err.message);
         })
     }
 
+
     return(
         <div className="container"><br/>
          <nav className="nav">
+         <Link to="/stockHome" className="nav-link">Home</Link>
          </nav><br/><br/>
             <h1>Add New Stock</h1><br/>
             <form className="form formEmp" onSubmit={sendData}>
@@ -57,9 +59,14 @@ export default function AddStock(){
                 </div>
                 <div className="mb-3">
                     <label for="category" className="form-label">Category</label>
-                    <input type="text" className="form-control form-controlEmp" id="category" onChange={(e)=>{
+                    <select className="form-select form-controlEmp" id="category" onChange={(e)=>{
                         setCategory(e.target.value);//updating state using value taken from the form 
-                    }}required/>
+                    }}required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="Electric Items">Electric Items</option>
+                        <option value="Kitchen tools">Kitchen tools</option>
+                        <option value="Furniture">Furniture</option>
+                    </select>
                 </div>
                 <div className="mb-3">
                     <label for="manufacturer" className="form-label">Manufacturer</label>
@@ -81,7 +88,7 @@ export default function AddStock(){
                 </div>
                 <div className="mb-3">
                     <label for="unitPrice" className="form-label">Unit Price</label>
-                    <input type="number" className="form-control form-controlEmp" id="unitPrice" onChange={(e)=>{
+                    <input  type="text" inputmode="numeric" className="form-control form-controlEmp" id="unitPrice" min="0" onChange={(e)=>{
                         setUnitPrice(e.target.value);//updating state using value taken from the form 
                     }}required/>
                 </div>
@@ -99,19 +106,26 @@ export default function AddStock(){
                 </div>
                 <div className="mb-3">
                     <label for="qty" className="form-label">Quantity</label>
-                    <input type="number" className="form-control form-controlEmp" id="qty" onChange={(e)=>{
+                    <input type="number" className="form-control form-controlEmp" id="qty" min="0" onChange={(e)=>{
                         setQty(e.target.value);//updating state using value taken from the form 
                     }}required/>
                 </div>
                 <div className="mb-3">
                     <label for="status_avail" className="form-label">Status</label>
-                    <input type="text" className="form-control form-controlEmp" id="status_avail" onChange={(e)=>{
+                    <select className="form-select form-controlEmp" id="status_avail" onChange={(e)=>{
                         setAvailStatus(e.target.value);//updating state using value taken from the form 
-                    }}required/>
+                    }}required>
+                        <option value="" disabled selected>Select</option>
+                        <option hidden>{status_avail}</option>
+                        <option value="Available">Available</option>
+                        <option value="Out-of-stock">Out of stock</option>
+                    </select>
                 </div>  
                 <br/><br/>
-                
-                <button type="submit" className="btn btnEmp btn-primary">Add Stock</button>
+                <table>
+                    <td><button type="submit" className="btn btnEmp btn-primary"><i class="fas fa-plus"></i>&nbsp;Add Stock</button></td>
+                    <td><button type="reset" className="btn btnEmp btn-secondary" ><i class="fas fa-eraser"></i>&nbsp;Clear</button></td>
+                </table>
             </form><br/><br/>
         </div>
     );

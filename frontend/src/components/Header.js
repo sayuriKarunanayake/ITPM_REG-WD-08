@@ -1,41 +1,50 @@
-import React from "react";
-//import { Form, Button,Navbar,Nav,NavDropdown} from "react-bootstrap";
+import React, { useState } from 'react'
+import {AppBar, Toolbar, Typography,Tab, Tabs} from "@mui/material"
+import { NavLink } from 'react-router-dom';
+import { Form, Button,Navbar,Nav,NavDropdown} from "react-bootstrap";
 
-function Header() {
 
+//import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
+
+const Header = () => {
+    const [value, setValue] =useState(  ); 
   return (
-    <nav className="navbar navbar-dark bg-dark">
-      <div className="container-fluid">
-    <a className="navbar-brand" href="#">Royal Lifestyle Store</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Features</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
-        </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            More
-          </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a className="dropdown-item" href="/addStock">Add Stocks</a></li>
-            <li><a className="dropdown-item" href="#">Suppliers</a></li>
-            <li><a className="dropdown-item" href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
+    <div>
+        <AppBar sx={{backgroundColor:"#ffff", width:"auto", ml:"auto"}} position='sticky'>
+        <Navbar className="navbar1" collapseOnSelect expand="lg" bg="bg-*purple" variant="light"> 
+          <Toolbar>
+            <div class="text-secondary">
+               
+            </div> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             
+            <Navbar.Brand href="/home">Royal LifeStyle Store  🐾 </Navbar.Brand>
+            <a className="nav-link" aria-current="page" href="/readf"><div class="text-secondary">Feedbacks</div></a>
+            <a className="nav-link" aria-current="page" href="/adduser"><div class="text-secondary">SupplierRegistration</div></a>
+
+            <a className="nav-link" aria-current="page" href="/ListSupplierPayment"><div class="text-secondary">ListSupplierPayment</div></a>
+            <a className="nav-link" aria-current="page" href="/SupplierPaymentRegistration"><div class="text-secondary">SupplierPaymentRegistration</div></a>
+
+            <a className="nav-link" aria-current="page" href="/stockHome"><div class="text-secondary">Stocks</div></a>
+
+
+
+            <NavDropdown title="More" id="collasible-nav-dropdown">
+        <NavDropdown.Item href="/hirebus">Services</NavDropdown.Item>
+        <NavDropdown.Item href="#">Contact Us</NavDropdown.Item>
+        <NavDropdown.Item href="/about">About us</NavDropdown.Item>
+        <NavDropdown.Item href="#">Gallery</NavDropdown.Item>
+        <NavDropdown.Divider />
+      </NavDropdown>
+
+            <Tabs sx={{ml:"auto"}}   value={value} onChange={(e,val)=>setValue(val)} >
+            <div><a href="/Profile"><img style={{height: 50, width: 50, marginLeft:552}} class="rounded-circle" src="https://cdn-icons-png.flaticon.com/512/219/219983.png" href="#"></img></a></div>
+              <Tab LinkComponent={NavLink} to="/adduser" label='Register'/>
+            </Tabs>
+            </Toolbar>
+            </Navbar>  </AppBar>
     </div>
-  </div>
-  </nav>
-  );
+  )
 }
 
 export default Header;
