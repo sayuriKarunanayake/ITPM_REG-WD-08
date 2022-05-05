@@ -59,7 +59,7 @@ export default function StaffLogin(){
                 ></Input><br/>
 
                 <Label for = "Password">Password</Label><br/>
-                <Input type = 'text' name = "password" placeholder = "Enter Password" required
+                <Input type = 'password' name = "password" placeholder = "Enter Password" required
                 onChange = {(e) =>{
                     setPassword(e.target.value);
                 }}
