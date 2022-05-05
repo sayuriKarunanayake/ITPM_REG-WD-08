@@ -4,6 +4,7 @@ let Staff = require("../models/Staff");
 //add route
 router.route("/add").post((req,res)=>{
     const staffID = req.body.staffID;
+    const role = req.body.role;
     const title = req.body.title;
     const first_name = req.body.first_name;
     const last_name = req.body.last_name;
@@ -16,6 +17,7 @@ router.route("/add").post((req,res)=>{
     //create obj.
     const newStaff = new Staff({
         staffID,
+        role,
         title,
         first_name,
         last_name,
@@ -35,7 +37,7 @@ router.route("/add").post((req,res)=>{
 })
 
 //get all details to frontend route
-router.route("/").get((req,res)=>{
+router.route("/getallStaff").get((req,res)=>{
     Staff.find().then((staffs)=>{
         res.json(staffs)
     }).catch((err)=>{
@@ -48,7 +50,8 @@ router.route("/").get((req,res)=>{
 router.route("/update/:staffID").put(async(req,res)=>{
     let userId = req.params.staffID;//id comes as a url parameter
     //destructure-frontend variables pass to backend as a object
-    const { title,
+    const { role,
+        title,
         first_name,
         last_name,
         nic,
@@ -57,6 +60,7 @@ router.route("/update/:staffID").put(async(req,res)=>{
         password } = req.body;
 
     const updateStaff = {
+        role,
         title,
         first_name,
         last_name,
@@ -86,7 +90,7 @@ router.route("/delete/:staffID").delete(async(req,res)=>{
     })
 })
 
-//get data of one 
+//get data of one staff member by staffID
 router.route("/get/:staffID").get(async(req,res)=>{
     let userId = req.params.staffID;
     const user = await Staff.findOne({staffID:userId}).then((staff)=>{
@@ -96,5 +100,21 @@ router.route("/get/:staffID").get(async(req,res)=>{
         res.status(500).send({status:"Error with fetching user", error:err.message});
     })
 })
+
+/*
+//check staff member by staffID
+router.route('/find/:staffID').get(async(req,res) =>{
+    const userID = req.params.staffID;
+    await Staff.exists({staffID:userID}).then((data)=>{
+        res.status(200).json(data);
+        console.log(data);//here mongoDB _id
+
+    }).catch((err)=>{
+        console.log(err.message);
+        res.status(500).send({status:"User not found", error:err.message});
+    })
+})
+*/
+
 
 module.exports = router;

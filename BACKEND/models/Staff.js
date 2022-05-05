@@ -12,6 +12,11 @@ const staffSchema = new Schema({
 
     },
 
+    role:{
+        type : String,
+        required : true//backend validation
+    },
+
     title:{
         type : String,
         required : true
@@ -47,7 +52,9 @@ const staffSchema = new Schema({
 
     password :{
         type : String,
-        required : true
+        required : true,//backend validation
+        maxlength: 20,
+        minlength: 5
     },
 
     regDate :{
