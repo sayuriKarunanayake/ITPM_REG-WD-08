@@ -30,17 +30,14 @@ const Header = () => {
 
 
             <NavDropdown title="More" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="/hirebus">Services</NavDropdown.Item>
+        <NavDropdown.Item href="/loginStaff">Staff Login</NavDropdown.Item>
         <NavDropdown.Item href="#">Contact Us</NavDropdown.Item>
         <NavDropdown.Item href="/about">About us</NavDropdown.Item>
         <NavDropdown.Item href="#">Gallery</NavDropdown.Item>
         <NavDropdown.Divider />
       </NavDropdown>
 
-            <Tabs sx={{ml:"auto"}}   value={value} onChange={(e,val)=>setValue(val)} >
-            <div><a href="/Profile"><img style={{height: 50, width: 50, marginLeft:552}} class="rounded-circle" src="https://cdn-icons-png.flaticon.com/512/219/219983.png" href="#"></img></a></div>
-              <Tab LinkComponent={NavLink} to="/adduser" label='Register'/>
-            </Tabs>
+    
             </Toolbar>
             </Navbar>  </AppBar>
     </div>

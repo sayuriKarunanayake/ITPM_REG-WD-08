@@ -10,6 +10,7 @@ import DisplayStockDetails from './components/DisplayStockDetails';
 import EditStock from './components/EditStock';
 import FetchStock from './components/FetchStock';
 import RegStaff from './components/RegStaff';
+import StaffLogin from './components/StaffLogin';
 
 //
 import Header from './components/Header';
@@ -22,7 +23,7 @@ function App() {
       <div className='body'>
       
         <Header/>
-        
+           
         <Routes>
         <Route exact path="/stockHome" element={<StockHome />} />  
         <Route exact path="/addStock" element={<AddStock />} />
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/editStock/:id" element={<EditStock />} />
         <Route exact path="/fetchStock/:id" element={<FetchStock />} />
         <Route exact path="/regStaff" element={<RegStaff />} />
+        <Route exact path="/loginStaff" element={<StaffLogin />} />
         </Routes>
 
         <Footer/>
