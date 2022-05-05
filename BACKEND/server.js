@@ -39,6 +39,19 @@ app.use("/register",registerRouter); //create register routes
 const feedbackRouter =require("./routes/Feedback.js"); //import  feedback routes
 app.use("/feedback",feedbackRouter); //create feedback routes
 
+//IT20192532
+
+//import routes
+const categoryRoutes = require("./routes/categories");
+const nrequestRoutes = require("./routes/nrequests");
+const itemRoutes = require("./routes/items");
+
+
+//route middleware
+app.use(categoryRoutes);
+app.use(nrequestRoutes);
+app.use(itemRoutes);
+
 app.listen(PORT, () => {
     console.log(`Server up and running on port ${PORT}`)
 })
