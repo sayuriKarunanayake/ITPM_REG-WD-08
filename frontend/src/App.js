@@ -32,7 +32,7 @@ function App() {
         <Route exact path="/editStock/:id" element={<EditStock />} />
         <Route exact path="/fetchStock/:id" element={<FetchStock />} />
         <Route exact path="/regStaff" element={<RegStaff />} />
-        <Route exact path="/loginStaff" element={<StaffLogin />} />
+        <Route exact path="/" element={<StaffLogin />} />
         </Routes>
 
         <Footer/>
