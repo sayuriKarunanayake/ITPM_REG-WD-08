@@ -42,7 +42,7 @@ export default function DisplayStockDetails() {
                   name = "searchQuerystock"
                   onChange = {(e)=>setSearch(e.target.value)} /> 
             </form></td>
-            <td><button className="btn btn-success"><a className="nounderline" href={`#`} style={{color:'white'}} ><i class="fas fa-file-alt"></i>&nbsp;Stock Report</a></button></td>
+            <td><button className="btn btn-success"><a className="nounderline" href={`/stockReport`} style={{color:'white'}} ><i class="fas fa-file-alt"></i>&nbsp;Stock Report</a></button></td>
           </table>
           <br/><br/>
             <h1 style={{textAlign:'center'}}>Stock Details</h1><hr/>

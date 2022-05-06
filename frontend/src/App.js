@@ -11,6 +11,7 @@ import EditStock from './components/EditStock';
 import FetchStock from './components/FetchStock';
 import RegStaff from './components/RegStaff';
 import StaffLogin from './components/StaffLogin';
+import StockReport from './components/StockReport';
 
 //
 import Header from './components/Header';
@@ -34,6 +35,7 @@ function App() {
         <Route exact path="/editStock/:id" element={<EditStock />} />
         <Route exact path="/fetchStock/:id" element={<FetchStock />} />
         <Route exact path="/regStaff" element={<RegStaff />} />
+        <Route exact path="/stockReport" element={<StockReport />} />
         </Routes>
         </div> 
         <Routes>
