@@ -33,14 +33,18 @@ export default function DisplayStockDetails() {
             <Link to="/stockHome" className="nav-link">Home</Link>
         </nav><br/><br/> 
             <div className="container">
-          <form className="d-flex">
-          <input 
-                className="form-control me-2" 
-                type="search" 
-                placeholder="Search Stock"
-                name = "searchQuerystock"
-                onChange = {(e)=>setSearch(e.target.value)} /> 
-          </form><br/><br/>
+          <table>
+          <td><form className="d-flex">
+            <input 
+                  className="form-control me-2" 
+                  type="search" 
+                  placeholder="Search Stock"
+                  name = "searchQuerystock"
+                  onChange = {(e)=>setSearch(e.target.value)} /> 
+            </form></td>
+            <td><button className="btn btn-success"><a className="nounderline" href={`#`} style={{color:'white'}} ><i class="fas fa-file-alt"></i>&nbsp;Stock Report</a></button></td>
+          </table>
+          <br/><br/>
             <h1 style={{textAlign:'center'}}>Stock Details</h1><hr/>
             <table className="table">
                 <thead>
