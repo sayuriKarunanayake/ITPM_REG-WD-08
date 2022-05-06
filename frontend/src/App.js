@@ -1,6 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 
 //IT20197032 - Sayuri
 import AddStock from './components/AddStock';
@@ -13,9 +16,8 @@ import RegStaff from './components/RegStaff';
 import StaffLogin from './components/StaffLogin';
 import StockReport from './components/StockReport';
 
-//
-import Header from './components/Header';
-import Footer from './components/Footer';
+//charya
+//import AddCategories from './components/AddCategories';
 
 
 function App() {
@@ -25,7 +27,7 @@ function App() {
       
         <Header/>
 
-        {/* IT20197032 */}
+        {/* Sayuri - IT20197032 */}
         <div className='body'>  
         <Routes>
         <Route exact path="/stockHome" element={<StockHome />} />  
@@ -42,7 +44,11 @@ function App() {
         <Route exact path="/" element={<StaffLogin />} />
         </Routes>
 
-
+        {/* charya */} 
+      {/*<Routes>
+          <Route exact path="/addCategories" element={<AddCategories />} />
+         </Routes> */}
+        
 
         <Footer/>
       </div>
