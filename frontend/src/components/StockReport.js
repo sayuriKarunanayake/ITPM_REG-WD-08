@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
+import { Link } from "react-router-dom";
 
 const GenerateStockReport = reports => {
  const doc = new jsPDF({orientation:"landscape",lineHeight:1.5});
@@ -51,6 +52,9 @@ const StockReport = () => {
 
     return(
         <div className="container"><br/><br/>
+        <nav className="nav">
+            <Link to="/viewStock" className="nav-link">Back</Link>
+         </nav><br/>
            <select className="form-select form-controlEmp" id="month" onChange={(e)=>{
                         setgetmonth(e.target.value);//updating state using value taken from the form 
                     }}required>
