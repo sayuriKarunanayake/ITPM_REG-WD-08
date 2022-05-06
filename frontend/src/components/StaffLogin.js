@@ -46,30 +46,42 @@ export default function StaffLogin(){
 
     return(
         <>
-             <div style = {{paddingTop : "50px"}}>
-            <br/><br/><h3 style = {{textAlign : 'center'}}>Staff Login</h3><br/><br/>
-            <div className='container'>
-            <form  onSubmit = {submit} encType = "multipart/form-data">
-
-                <Label for = "staffID">Staff ID</Label><br/>
-                <Input type = 'text' name = "staffID" placeholder = "Enter staffID" required 
-                onChange = {(e) =>{
-                    setstaffID(e.target.value);
-                }}
-                ></Input><br/>
-
-                <Label for = "Password">Password</Label><br/>
-                <Input type = 'text' name = "password" placeholder = "Enter Password" required
-                onChange = {(e) =>{
-                    setPassword(e.target.value);
-                }}
-                ></Input>
-                <div id="emailHelp" class="form-text">max 20 characters, min 5 characters</div>
-                <br/>
-
-                <Button color = "primary" type = "submit" style = {{float:'right' , margin : "5px" }}>Login</Button><br/><br/>
-            </form>   <br/><br/> 
-            </div>
+             <div style = {{paddingTop : "50px",paddingBottom : "50px",paddingLeft:"550px"}}>
+            <table border="1" style = {{width:"40%"}}>
+                <br/><br/><h3 style = {{textAlign : 'center'}}>Staff Login</h3><br/><br/>
+                <div className='container'>
+            
+                <form className='loginform' onSubmit = {submit} class="px-4 py-3">
+                    <div class="form-group">
+                    <label for="staffID">Staff ID</label><br/>
+                    <input type="text" class="form-control" id="staffID" placeholder="Enter StaffID" required 
+                    onChange = {(e) =>{
+                        setstaffID(e.target.value);
+                    }}/>
+                    </div><br/>
+                    <div class="form-group">
+                    <label for="exampleDropdownFormPassword1">Password</label><br/>
+                    <input type="text" class="form-control" id="exampleDropdownFormPassword1" placeholder="Enter Password" required
+                    onChange = {(e) =>{
+                        setPassword(e.target.value);
+                    }}/><br/>
+                    </div>
+                    <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck"/>
+                    <label class="form-check-label" for="dropdownCheck">
+                        Remember me
+                    </label>
+                    </div><br/>
+                    <button type="submit" class="btn btn-primary">Sign in</button><br/>
+                </form>
+            
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">New around here? Register</a>
+                <a class="dropdown-item" href="#">Forgot password?</a>
+            
+                <br/><br/> 
+                </div>
+            </table>
         </div>   
         </>
     )
