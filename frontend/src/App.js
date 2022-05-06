@@ -20,10 +20,12 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
-      <div className='body'>
+      <div>
       
         <Header/>
-           
+
+        {/* IT20197032 */}
+        <div className='body'>  
         <Routes>
         <Route exact path="/stockHome" element={<StockHome />} />  
         <Route exact path="/addStock" element={<AddStock />} />
@@ -32,8 +34,13 @@ function App() {
         <Route exact path="/editStock/:id" element={<EditStock />} />
         <Route exact path="/fetchStock/:id" element={<FetchStock />} />
         <Route exact path="/regStaff" element={<RegStaff />} />
+        </Routes>
+        </div> 
+        <Routes>
         <Route exact path="/" element={<StaffLogin />} />
         </Routes>
+
+
 
         <Footer/>
       </div>

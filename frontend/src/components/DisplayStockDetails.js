@@ -9,11 +9,12 @@ export default function DisplayStockDetails() {
 
     //set state
     const[stock, setStock] = useState([]);//array
+    const[search,setSearch] = useState("");
 
     
     useEffect(()=>{
         function getStockList(){
-            //code segment related to from where data get and how
+            //code segment related to from where data get and show
             axios.get("http://localhost:8070/stock/getallstock").then((res)=>{
                 console.log(res.data);
                 setStock(res.data);
@@ -33,14 +34,18 @@ export default function DisplayStockDetails() {
         </nav><br/><br/> 
             <div className="container">
           <form className="d-flex">
-                <input className="form-control me-2" type="search" placeholder="Search" />
-                
+          <input 
+                className="form-control me-2" 
+                type="search" 
+                placeholder="Search Stock"
+                name = "searchQuerystock"
+                onChange = {(e)=>setSearch(e.target.value)} /> 
           </form><br/><br/>
             <h1 style={{textAlign:'center'}}>Stock Details</h1><hr/>
-            {stock.map((val, key)=>{
-                return<div key={key} className="container"><table className="table">
+            <table className="table">
                 <thead>
                   <tr>
+                    <th scope="col">#</th>
                     <th scope="col">Stock Code</th>
                     <th scope="col">Category</th>
                     <th scope="col">Model Name</th>
@@ -52,11 +57,20 @@ export default function DisplayStockDetails() {
                   </tr>
                 </thead>
                 <tbody>
+                {stock.filter(val=>{
+                  if(search==""){
+                    return val
+                  }
+                  else if(val.modelName.toLowerCase().includes(search.toLowerCase())){
+                    return val
+                  }
+                }).map((val, key)=>(
                   <tr>
-                    <th valign="middle" scope="row">
+                    <th valign="middle" scope="row">{key +1}</th> 
+                    <td valign="middle" scope="row">
                       <a href={`/fetchStock/${val.stockCode}`} style={{textDecoration:'none'}}>
                       {val.stockCode}
-                      </a></th>
+                      </a></td>
                     <td valign="middle">{val.category}</td>
                     <td valign="middle">{val.modelName}</td>
                     <td valign="middle">Rs.{val.unitPrice}</td>                    
@@ -69,11 +83,11 @@ export default function DisplayStockDetails() {
                     <button className="btn btn-danger custom"><a className="nounderline" href={`/deleteStock/${val.stockCode}`} style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button></td>
 
                   </tr>
-                  
+                   ))}
                 </tbody>
               </table><br/><br/></div>
-            })}
+           
             </div>
-        </div>
+     
     )
 }

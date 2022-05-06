@@ -49,7 +49,7 @@ export default function FetchStock(){
          </nav><br/>
             <h1>Stock Code : {id}</h1><br/>
             <table className="table">
-            <tr><th  style={{textAlign:"left"}} scope="col">Stock Code  </th>  <td style={{textAlign:"left"}}>{stockCode}</td></tr>
+            
             <tr><th  style={{textAlign:"left"}} scope="col">Category </th> <td style={{textAlign:"left"}}>{category}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">Manufacturer </th> <td style={{textAlign:"left"}}>{manufacturer}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">Supplier </th> <td style={{textAlign:"left"}}>{supplier}</td></tr>
