@@ -45,7 +45,7 @@ export default function FetchStock(){
     return(
         <div className="container"><br/><br/>
          <nav className="nav">
-            <Link to="/allemployee" className="nav-link">Back</Link>
+            <Link to="/viewStock" className="nav-link">Back</Link>
          </nav><br/>
             <h1>Stock Code : {id}</h1><br/>
             <table className="table">
