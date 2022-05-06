@@ -73,3 +73,11 @@
   background:#dbc9e3;
   color:white !important;
 }
+
+.loginform
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
