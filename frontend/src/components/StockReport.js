@@ -51,16 +51,26 @@ const StockReport = () => {
 
     return(
         <div className="container"><br/><br/>
-            <form className="d-flex">
-                <input 
-                className="form-control me-2" 
-                type="getmonth" 
-                placeholder="Enter Month"
-                name = "getmonthQuery"
-                onChange = {(e)=>setgetmonth(e.target.value)} />
-             </form><br/><br/>
+           <select className="form-select form-controlEmp" id="month" onChange={(e)=>{
+                        setgetmonth(e.target.value);//updating state using value taken from the form 
+                    }}required>
+                        <option value="" disabled selected>Select received month</option>
+                        <option value="01">Jan</option>
+                        <option value="02">Feb</option>
+                        <option value="03">Mar</option>
+                        <option value="04">Apr</option>
+                        <option value="05">May</option>
+                        <option value="06">Jun</option>
+                        <option value="07">Jul</option>
+                        <option value="08">Aug</option>
+                        <option value="09">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+            </select>
+            <br/><br/>
 
-            <button className="btn btn-primary" onClick={()=>GenerateStockReport(reportStock)}>Generate Report</button>
+            <button className="btn btn-info" onClick={()=>GenerateStockReport(reportStock)}>Generate Report</button>
             <br/><br/>
             {reports.filter(filterStock).map((val, key)=>{
                 return<div key={key} className="container"><table className="table">
