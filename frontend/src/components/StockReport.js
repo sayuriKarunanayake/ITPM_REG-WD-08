@@ -25,7 +25,7 @@ const GenerateStockReport = reports => {
      tableRows.push(reportData); 
  });
  doc.autoTable(tableColumns,tableRows,{startY:20});
- doc.text("Stocks Received within a month",14,15);
+ doc.text("Monthly Stock Report",14,15);
  doc.save(`Stock_MonthlyReport.pdf`);
 
 };
