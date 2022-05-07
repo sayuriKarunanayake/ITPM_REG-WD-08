@@ -15,6 +15,7 @@ import FetchStock from './components/FetchStock';
 import RegStaff from './components/RegStaff';
 import StaffLogin from './components/StaffLogin';
 import StockReport from './components/StockReport';
+import AllCusPayments from './components/AllCusPayments';
 
 //charya
 //import AddCategories from './components/AddCategories';
@@ -38,6 +39,7 @@ function App() {
         <Route exact path="/fetchStock/:id" element={<FetchStock />} />
         <Route exact path="/regStaff" element={<RegStaff />} />
         <Route exact path="/stockReport" element={<StockReport />} />
+        <Route exact path="/cusPay" element={<AllCusPayments />} />
         </Routes>
         </div> 
         <Routes>
