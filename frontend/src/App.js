@@ -16,6 +16,7 @@ import RegStaff from './components/RegStaff';
 import StaffLogin from './components/StaffLogin';
 import StockReport from './components/StockReport';
 import AllCusPayments from './components/AllCusPayments';
+import PaymentCustomer from './components/PaymentCustomer';
 
 //charya
 //import AddCategories from './components/AddCategories';
@@ -44,6 +45,7 @@ function App() {
         </div> 
         <Routes>
         <Route exact path="/" element={<StaffLogin />} />
+        <Route exact path="/addcuspay" element={<PaymentCustomer />} />
         </Routes>
 
         {/* charya */} 
