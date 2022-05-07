@@ -66,10 +66,10 @@ export default function AllCusPayments(){
                     <th valign="middle" scope="row">{key +1}</th> 
                     <td valign="middle">{val.cardType}</td>
                     <td valign="middle">{val.nameOncard}</td>
-                    <td valign="middle">Rs.{val.cardNo}</td>                    
+                    <td valign="middle">{val.cardNo}</td>                    
                     <td valign="middle">{val.expdate}</td>
                     <td valign="middle">{val.cvv}</td>
-                    <td valign="middle">{val.payamount}</td>
+                    <td valign="middle">Rs. {val.payamount}</td>
                     <td valign="middle">{val.paymentDate}</td>
 
                   </tr>

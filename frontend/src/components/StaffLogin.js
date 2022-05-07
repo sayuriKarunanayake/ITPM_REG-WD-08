@@ -65,7 +65,7 @@ export default function StaffLogin(){
                     onChange = {(e) =>{
                         setPassword(e.target.value);
                     }}/><br/>
-                    </div>
+                    </div><br/>
                     <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="dropdownCheck"/>
                     <label class="form-check-label" for="dropdownCheck">
