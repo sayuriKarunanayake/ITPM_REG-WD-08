@@ -76,7 +76,7 @@ export default function StaffLogin(){
                 </form>
             
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">New around here? Register</a>
+                <a class="dropdown-item" href="/regStaff">New around here? Register</a>
                 <a class="dropdown-item" href="#">Forgot password?</a>
             
                 <br/><br/> 
