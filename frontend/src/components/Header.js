@@ -23,7 +23,7 @@ const Header = () => {
             <a className="nav-link" aria-current="page" href="/adduser"><div class="text-secondary">SupplierRegistration</div></a>
 
             <a className="nav-link" aria-current="page" href="/ListSupplierPayment"><div class="text-secondary">ListSupplierPayment</div></a>
-            <a className="nav-link" aria-current="page" href="/SupplierPaymentRegistration"><div class="text-secondary">SupplierPaymentRegistration</div></a>
+            <a className="nav-link" aria-current="page" href="/Supplier_Home"><div class="text-secondary">SUPPLIER MANAGEMENT</div></a>
 
             <a className="nav-link" aria-current="page" href="/stockHome"><div class="text-secondary">Stocks</div></a>
 
