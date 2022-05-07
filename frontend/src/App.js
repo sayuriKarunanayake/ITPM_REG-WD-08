@@ -17,6 +17,8 @@ import StaffLogin from './components/StaffLogin';
 import StockReport from './components/StockReport';
 import AllCusPayments from './components/AllCusPayments';
 import PaymentCustomer from './components/PaymentCustomer';
+import AllStaffDetails from './components/AllStaffDetails';
+
 
 //charya
 //import AddCategories from './components/AddCategories';
@@ -41,6 +43,7 @@ function App() {
         <Route exact path="/regStaff" element={<RegStaff />} />
         <Route exact path="/stockReport" element={<StockReport />} />
         <Route exact path="/cusPay" element={<AllCusPayments />} />
+        <Route exact path="/allstaff" element={<AllStaffDetails />} />
         </Routes>
         </div> 
         <Routes>
@@ -49,11 +52,11 @@ function App() {
         </Routes>
 
         {/* charya */} 
-      {/*<Routes>
+        {/*<Routes>
           <Route exact path="/addCategories" element={<AddCategories />} />
          </Routes> */}
         
-         {/* Thisara - IT20198954 */}
+       
 
           
 

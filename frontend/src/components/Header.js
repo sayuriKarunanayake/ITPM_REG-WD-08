@@ -33,7 +33,7 @@ const Header = () => {
         <NavDropdown.Item href="/">Staff Login</NavDropdown.Item>
         <NavDropdown.Item href="/cusPay">Customer Payments</NavDropdown.Item>
         <NavDropdown.Item href="/addcuspay">Add cutomer Payment</NavDropdown.Item>
-        <NavDropdown.Item href="#">Gallery</NavDropdown.Item>
+        <NavDropdown.Item href="/allstaff">All staff</NavDropdown.Item>
         <NavDropdown.Divider />
       </NavDropdown>
 
