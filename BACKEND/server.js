@@ -35,6 +35,9 @@ app.use("/staff", staffRouter);//1st parameter is the url name to call js file
 const stockRouter = require("./routes/stocks.js");
 app.use("/stock", stockRouter);//1st parameter is the url name to call js file
 
+const cuspaymentRouter = require("./routes/cuspayments.js");
+app.use("/cuspayment", cuspaymentRouter);//1st parameter is the url name to call js file
+
 
 //IT20198954
 const registerRouter =require("./routes/Register.js"); //import  register routes
