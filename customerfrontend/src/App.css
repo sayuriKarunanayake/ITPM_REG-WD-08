@@ -1,0 +1,309 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*thisara -it20198954*/
+
+.image {
+  /*image-rendering: url(./assets/view2.png); */
+   display: block;
+   width: auto;
+   height: auto;
+ }
+
+.signup-content,
+.signin-content{
+  display: flex;
+  display: -webkit-box;
+}
+ 
+.signup2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 10px;
+  
+}
+.signup1{
+  
+  padding: 10px;
+ 
+  text-align: center; 
+  background-color: #d6abec;
+}
+
+#user {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid rgb(229, 190, 190);
+  max-width: 1550px;
+  background-color: #ebc7eb;
+}
+
+#user td   {
+  
+  padding: 8px;
+  margin-left: 6px;
+  
+
+}
+
+ 
+
+#user th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  
+  
+}
+
+.stopic {
+  font-size: 42px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  font-style: bold;
+  width: 100%;
+  color: rgb(11, 20, 17);
+  max-height: 2500px;
+  text-align: center;
+  max-width: 1250px;
+  margin: 10px auto;
+}
+
+.simage{
+  display: flex;
+  display: -webkit-box;
+  margin-left: 130px;
+  margin-right: 50px;
+  margin-top: 10px;
+  width: 350px;
+ height: 350px;
+ border-radius: 50%;
+}
+ 
+.linkreg{
+  position: relative;
+  left: 40px;
+  font: size 45px; 
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  font-style: bold;
+ 
+  
+  
+
+}
+
+.links2{
+  position: relative;
+  left: 30px;
+  font-size: 30px;
+
+}
+
+.register-form{
+  max-width: 1500px;
+  max-block-size: auto;
+}
+
+.labels{
+  font-size:22px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  font-style: bold;
+  width: 100%;
+  color: rgb(11, 20, 17);
+  max-height: 200px;
+  text-align: center;
+  max-width: 250px;
+  margin: 10px auto;
+}
+
+.btncancel{
+  margin-right:16px;
+  background-color:btn btn-light;
+  border: rgb(30, 146, 30);
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.addf{
+ 
+  background-image: url(./assets/backg.jpg);
+  background-size: cover;
+  
+  width: cover;
+
+}
+
+.viewf{
+  background-image: url(./assets/backg2.jpg);
+  background-size: cover;
+  
+  width: cover;
+}
+
+
+.signup{
+  /*background-image: url(./assets/bgs.jpg); */
+  background-size: cover;
+  
+  width: cover;
+}
+ 
+.signin2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 10px;
+  
+}
+.signins{
+  
+  padding: 20px;
+ 
+  text-align: center;
+  max-width: 1200px;
+  max-height: 1000;
+  margin: 10px auto;
+   
+  background-color: #dbc9e3;
+}
+.loginimage{
+  display: flex;
+  display: -webkit-box;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 10px;
+  width: 250px;
+ height: 250px;
+ border-radius: 50%;
+}
+
+.navbar1{
+  background:#dbc9e3;
+  color:white !important;
+}
+
+.signinform{
+  margin-left: 250px;
+}
+
+.ftable{
+  margin-left: 650px;
+  font-size: large;
+  width: 650px;
+  
+}
+
+.btnspace{
+  margin-right:20px;
+   margin-left:50px;
+   font-size: large;
+   font-weight: 600;
+   
+   border-radius: 7%;
+   height: 50px;
+   width: 250px;
+}
+
+  
+.c1{
+  background:#FFFFFF ;
+}
+
+
+.c2{
+  background:#000000 ;
+}
+
+.c3{
+  background:#C0C0C0;
+}
+
+.c4{
+  background:#00FF00 ;
+}
+
+.c5{
+  background:#008000;
+}
+
+.c6{
+  background:#0000FF;
+}
+
+.c7{
+  background:#ADD8E6 ;
+}
+
+.c8{
+  background:#00008B;
+}
+
+.c9{
+  background:#800000 ;
+}
+
+.c10{
+  background:#FFFF00 ;
+}
+
+.c11{
+  background:#FFC0CB ;
+}
+
+.c12{
+  background:#FF1493 ;
+}
+
+.c13{
+  background:#800080 ;
+}
+
+.c14{
+  background:#FF0000 ;
+}

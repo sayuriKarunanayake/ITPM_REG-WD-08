@@ -53,6 +53,9 @@ function App() {
           <Route exact path="/addCategories" element={<AddCategories />} />
          </Routes> */}
         
+         {/* Thisara - IT20198954 */}
+
+          
 
         <Footer/>
       </div>
