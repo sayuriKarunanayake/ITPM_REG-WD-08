@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import jsPdf from 'jspdf';
+import 'jspdf-autotable';
 
 // Shows details of all recipe...
  class Supplier_Details extends Component{
@@ -53,6 +55,26 @@ handleSearchArea =(e) =>{
     }
   });
 }
+
+//pdf generating
+jsPdfGenerator = () => {
+
+  //new document in jspdf
+  var doc = new jsPdf('p','pt');
+
+  doc.text(210,30,"Supplier Payment Details")
+  doc.autoTable({  html:'#my-table' })
+
+  doc.autoTable({
+    columnStyles: { europe: { halign: 'center' } }, 
+    margin: { top: 10 },
+  })
+
+  //save the pdf
+  doc.save("Supplier Payment Details.pdf");
+}
+
+
 render(){
     return (
       
@@ -67,7 +89,7 @@ render(){
       <div className = "col-lg-9 mt-2 mb-2" >
         &nbsp;&nbsp;&nbsp;
         <button type="button" class="btn btn-success" variant = "primary"> <a href="/Supplier_Registration" style={{textDecoration:'none',color:'white'}}>
-          Create New Supplier </a></button>
+          Create Supplier </a></button>
         
         </div > 
             
@@ -82,7 +104,7 @@ render(){
 
       <div className="container">
       <div style = {{backgroundColor:'#FFFF',  margin:"0"}}>
-      <table class="table table-bordered table-white" >
+      <table class="table table-bordered table-white"     id="my-table" className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -114,9 +136,9 @@ render(){
                   <td>{posts.Item}</td>
                   <td>{posts.newDate}</td>
                   <td>{posts.Remark}</td>
-                <td>
+                  <td>
                   {/* Edit button */}
-                  <a className="btn btn-info" href={`/Edit_Suppliers?id=${posts._id}`}>
+                  <a className="btn btn-info" href={`/Edit_Supplier/${posts._id}`}>
                     <i className="fas fa-edit"></i>&nbsp;Edit&nbsp;&nbsp;&nbsp;
                   </a>
                   &nbsp;
@@ -132,6 +154,7 @@ render(){
       
       </div>
       <br/>
+      <br/> <button onClick={this.jsPdfGenerator} type="button" class="btn btn-primary">Pdf</button> <br/>
       
       </div><br/><br/></div>
     )
