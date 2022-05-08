@@ -17,6 +17,10 @@ import AllDelivery from './components/AdminEditDelivery';
 //IT20197032
 import PaymentCustomer from './components/PaymentCustomer';
 
+//IT20192532
+import AddNewProductRequest from './components/AddNewProductRequest';
+import Home from './components/Home';
+
 function App() {
   return (
     <Router>
@@ -37,6 +41,9 @@ function App() {
               {/* Sayuri - IT20197032 */}
               <Route exact path="/addcuspay" element={<PaymentCustomer/>}/>
 
+              {/*Charya - IT20192532 */}
+              <Route exact path="/addrequest" element={<AddNewProductRequest/>}/>
+              <Route exact path="/" element={<Home/>}/>
 
 <Route exact path="/orderhome" element={<OrderHandler />} />
 

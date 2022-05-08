@@ -32,7 +32,7 @@ const itemSchema = new Schema ({
     },
     itemimage:{
         type:String,
-        required:true
+        
     }
 });
 
