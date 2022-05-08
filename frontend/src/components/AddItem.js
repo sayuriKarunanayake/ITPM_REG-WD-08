@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import styled from "styled-components";
+
 import axios from "axios";
 import {Button,Card} from 'react-bootstrap';
 
 const AddItem = () => {
     const [itemcode , setItemcode] = useState("");
-    const [category,setcategory] = useState("");
+    const [category, setcategory] = useState("");
     const [itemname , setItemname] = useState("");
     const [itemprice , setItemprice] = useState("");
     const [itemdescription, setItemdescription] = useState("");
