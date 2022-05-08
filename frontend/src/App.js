@@ -29,6 +29,7 @@ import ItemCategoryManagement from './components/ItemandCategoryManagement';
 import GenerateItemReport from './components/GenerateItemReport';
 
 
+
 //IT20156510
 import Supplier_Home from './components/Supplier_Home';
 import Supplier_Details from './components/Supplier_Details';
@@ -78,8 +79,6 @@ function App() {
         </Routes>
 
 
-
-
         {/* charya - IT20192532*/} 
         <Routes>
           <Route exact path="/additems" element={<AddItem />} />
@@ -89,7 +88,7 @@ function App() {
           <Route exact path="/itemandcategoryHome" element={<ItemCategoryManagement />} />
           <Route exact path="/reportgene" element={<GenerateItemReport />} />
          </Routes> 
- 
+
 
 
         {/* Sanjaya - IT20156510 */} 
