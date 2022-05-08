@@ -19,24 +19,21 @@ const Header = () => {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              
             <Navbar.Brand href="/home">Royal LifeStyle Store  🐾 </Navbar.Brand>
-            <a className="nav-link" aria-current="page" href="/readf"><div class="text-secondary">Feedbacks</div></a>
-            <a className="nav-link" aria-current="page" href="/adduser"><div class="text-secondary">SupplierRegistration</div></a>
-
-            <a className="nav-link" aria-current="page" href="/ListSupplierPayment"><div class="text-secondary">ListSupplierPayment</div></a>
-            <a className="nav-link" aria-current="page" href="/Supplier_Home"><div class="text-secondary">SUPPLIER MANAGEMENT</div></a>
-
-            <a className="nav-link" aria-current="page" href="/stockHome"><div class="text-secondary">Stocks</div></a>
+        
 
 
 
-            <NavDropdown title="More" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="/">Staff Login</NavDropdown.Item>
-        <NavDropdown.Item href="/cusPay">Customer Payments</NavDropdown.Item>
+        <NavDropdown title="More" id="collasible-nav-dropdown">
+        
         <NavDropdown.Item href="/addcuspay">Add cutomer Payment</NavDropdown.Item>
-        <NavDropdown.Item href="/allstaff">All staff</NavDropdown.Item>
+     
         <NavDropdown.Divider />
-      </NavDropdown>
+        </NavDropdown>
 
+        <Tabs sx={{ml:"auto"}}   value={value} onChange={(e,val)=>setValue(val)} >
+            <div><a href="/"><img style={{height: 50, width: 50, marginLeft:552}} class="rounded-circle" src="https://cdn-icons-png.flaticon.com/512/219/219983.png" href="/adduser"></img></a></div>
+            <Tab LinkComponent={NavLink} to="/" label='Login'/>
+        </Tabs>
     
             </Toolbar>
             </Navbar>  </AppBar>

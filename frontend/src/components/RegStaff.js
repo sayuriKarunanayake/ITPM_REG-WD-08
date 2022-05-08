@@ -48,6 +48,9 @@ export default function RegStaff(){
     return(
     <>
         <div style = {{paddingTop : "50px",paddingBottom : "50px",paddingLeft:"550px"}}>
+        <nav className="nav">
+            <Link to="/adminHome" className="nav-link">Home</Link>
+        </nav><br/><br/> 
             <table border="1" style = {{width:"50%"}}>
                 <br/><br/><h3 style = {{textAlign : 'center'}}>Staff Registration</h3><br/><br/>
                 <div className='container'>

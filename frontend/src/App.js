@@ -18,7 +18,7 @@ import StockReport from './components/StockReport';
 import AllCusPayments from './components/AllCusPayments';
 import PaymentCustomer from './components/PaymentCustomer';
 import AllStaffDetails from './components/AllStaffDetails';
-
+import AdminHome from './components/AdminHome';
 
 //charya
 //import AddCategories from './components/AddCategories';
@@ -30,7 +30,7 @@ import Supplier_Details from './components/Supplier_Details';
 import Supplier_Registration from './components/Supplier_Registration';
 
 import Payment_Details from './components/Payment_Details';
-import Add_Payment_Details from './components/Payment_Details';
+import Add_Payment_Details from './components/Add_Payment_Details';
 
 import Supplier_Payment_Details from './components/Supplier_Payment_Details';
 import Add_Supplier_Payment from './components/Add_Supplier_Payment';
@@ -64,13 +64,18 @@ function App() {
         <Route exact path="/" element={<StaffLogin />} />
         <Route exact path="/regStaff" element={<RegStaff />} />
         <Route exact path="/addcuspay" element={<PaymentCustomer />} />
+        <Route exact path="/adminHome" element={<AdminHome />} />
+
         </Routes>
+
 
         {/* charya */} 
         {/*<Routes>
           <Route exact path="/addCategories" element={<AddCategories />} />
          </Routes> */}
 
+
+        {/* Sanjaya - IT20156510 */} 
         <Routes>
         <Route exact path="/Supplier_Home" element={<Supplier_Home />} />
         <Route exact path="/Supplier_Details" element={<Supplier_Details />} />

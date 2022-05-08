@@ -30,10 +30,17 @@ export default function StaffLogin(){
                             //Home of Stock Manager
                             history(`/stockHome`);
                         }
-                        else{
+                        else if(res.data.staff.role === "supplier manager"){
                            
-                            history(`/addStock`);
+                            history(`/Supplier_Home`);
                         }
+                        else if(res.data.staff.role === "Admin"){
+                            history(`/adminHome`);
+                        }
+                        else{
+                            history(`/addStock`)
+                        }
+
                     }
                 
             

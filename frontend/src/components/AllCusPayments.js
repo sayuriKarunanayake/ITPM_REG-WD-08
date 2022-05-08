@@ -24,7 +24,7 @@ export default function AllCusPayments(){
     return(
         <div className="container"><br/>
         <nav className="nav">
-            <Link to="/stockHome" className="nav-link">Home</Link>
+            <Link to="/adminHome" className="nav-link">Home</Link>
         </nav><br/><br/> 
             <div className="container">
           <table>
