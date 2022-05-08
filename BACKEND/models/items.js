@@ -1,31 +1,42 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 //create an variable
-const itemSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
 //declare attributes
+
+const itemSchema = new Schema ({
 
     itemcode:{
         type:String,
-        require:true,
+        required:true,
         unique:true
+    },
+    category:{
+        type:String,
+        required:true
     },
     itemname:{
         type:String,
-        require:true
+        required:true
     },
     itemprice:{
         type:String,
-        require:true  
+        required:true  
     },
     itemdescription:{
         type:String,
-        require:true
+        required:true
+    },
+    date:{
+        type:String,
+        required:true
     },
     itemimage:{
         type:String,
-        require:true
+        required:true
     }
 });
 
+const Items = mongoose.model("Item", itemSchema);
 
 //export module
-module.exports=mongoose.model('Items',itemSchema)
+module.exports=Items;
