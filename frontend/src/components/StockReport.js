@@ -51,7 +51,7 @@ const StockReport = () => {
     const filterStock = report=>report.receivedDate.substring(5, 7)==getmonth;
 
     return(
-        <div className="container"><br/><br/>
+        <div className="container" style={{height:'800px'}}><br/><br/>
         <nav className="nav">
             <Link to="/viewStock" className="nav-link">Back</Link>
          </nav><br/>

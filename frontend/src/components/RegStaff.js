@@ -17,7 +17,7 @@ export default function RegStaff(){
 
     function sendData(e){
         //validations
-
+        
 
         e.preventDefault();
 
@@ -48,20 +48,20 @@ export default function RegStaff(){
     return(
     <>
         <div style = {{paddingTop : "50px",paddingBottom : "50px",paddingLeft:"550px"}}>
-            <table border="1" style = {{width:"50%"}}>
-                <br/><br/><h3 style = {{textAlign : 'center'}}>Staff Registration</h3><br/><br/>
+            <table border="1" style = {{width:"50%",backgroundColor: "#F3C4E2"}}>
+                <br/><br/><h3 style = {{textAlign : 'center'}}><font face = "Comic sans MS" size ="6" >Staff Registration</font></h3><br/><br/>
                 <div className='container'>
             
                 <form className='loginform' onSubmit = {sendData} class="px-4 py-3">
                     <div class="form-group">
-                    <label for="StaffID">Staff ID</label><br/>
+                    <label for="StaffID"><strong>Staff ID</strong></label><br/>
                     <input type="text" class="form-control" id="StaffID" placeholder="Enter Staff ID" required 
                     onChange = {(e) =>{
                         setStaffID(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
-                    <label for="role">Role</label><br/>
+                    <label for="role"><strong>Role</strong></label><br/>
                     <select className="form-select form-control" id="role" 
                     onChange = {(e) =>{
                         setrole(e.target.value);
@@ -74,7 +74,7 @@ export default function RegStaff(){
                     </select>  
                     </div><br/>
                     <div class="form-group">
-                    <label for="Title">Title</label><br/>
+                    <label for="Title"><strong>Title</strong></label><br/>
                     <select className="form-select form-control" id="Title" 
                     onChange = {(e) =>{
                         setTitle(e.target.value);
@@ -85,49 +85,49 @@ export default function RegStaff(){
                     </select>    
                     </div><br/>
                     <div class="form-group">
-                    <label for="Fname">First Name</label><br/>
+                    <label for="Fname"><strong>First Name</strong></label><br/>
                     <input type="text" class="form-control" id="Fname" placeholder="enter first name" required
                     onChange = {(e) =>{
                         setFname(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
-                    <label for="Lname">Last Name</label><br/>
+                    <label for="Lname"><strong>Last Name</strong></label><br/>
                     <input type="text" class="form-control" id="Lname" placeholder="Enter last name" required
                     onChange = {(e) =>{
                         setLname(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
-                    <label for="Nic">NIC</label><br/>
+                    <label for="Nic"><strong>NIC</strong></label><br/>
                     <input type="text" class="form-control" id="Nic" placeholder="Enter NIC" maxLength={10} required
                     onChange = {(e) =>{
                         setNic(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
-                    <label for="Phoneno">Phone Number</label><br/>
+                    <label for="Phoneno"><strong>Phone Number</strong></label><br/>
                     <input type="text" class="form-control" id="Phoneno" placeholder="Enter Phone No." maxLength={10} required
                     onChange = {(e) =>{
                         setPhoneno(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
-                    <label for="Email">Email</label><br/>
+                    <label for="Email"><strong>Email</strong></label><br/>
                     <input type="text" class="form-control" id="Email" placeholder="Enter Email" required
                     onChange = {(e) =>{
                         setEmail(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
-                    <label for="Pwd">Password</label><br/>
+                    <label for="Pwd"><strong>Password</strong></label><br/>
                     <input type="text" class="form-control" id="Pwd" placeholder="Enter password" maxLength={20} minLength={8} required
                     onChange = {(e) =>{
                         setPwd(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
-                    <label for="Regdate">Registered Date</label><br/>
+                    <label for="Regdate"><strong>Registered Date</strong></label><br/>
                     <input type="date" class="form-control" id="Regdate"  required
                     onChange = {(e) =>{
                         setRegdate(e.target.value);

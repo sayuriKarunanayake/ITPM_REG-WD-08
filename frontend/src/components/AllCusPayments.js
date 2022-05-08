@@ -22,7 +22,7 @@ export default function AllCusPayments(){
     },[]);
 
     return(
-        <div className="container"><br/>
+        <div className="container" style={{height:'800px'}}><br/>
         <nav className="nav">
             <Link to="/stockHome" className="nav-link">Home</Link>
         </nav><br/><br/> 

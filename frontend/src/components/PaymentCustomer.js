@@ -13,7 +13,7 @@ export default function PaymentCustomer(){
 
     function sendData(e){
         //validations
-
+        //
 
         e.preventDefault();//to prevent normal behavior of submit
 
@@ -41,11 +41,11 @@ export default function PaymentCustomer(){
     return(
     <>
         <div style = {{paddingTop : "50px",paddingBottom : "50px",paddingLeft:"550px"}}>
-            <table border="1" style = {{width:"50%"}}>
-                <br/><br/><h3 style = {{textAlign : 'center'}}>Payment</h3><br/><br/>
+            <table border="1" style = {{width:"50%",backgroundColor: "#F3C4E2"}}>
+                <br/><br/><h3 style = {{textAlign : 'center'}}><font face = "Comic sans MS" size ="6" >Payment</font></h3><br/>
                 <div className='container'>
             
-                <form className='loginform' onSubmit = {sendData} class="px-4 py-3">
+                <form className='loginform' style={{}} onSubmit = {sendData} class="px-4 py-3">
                     <div class="form-group">
                     <label for="cardType">Card Type</label><br/>
                     <input type="text" class="form-control" id="cardType" placeholder="Enter card type" required 

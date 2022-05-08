@@ -66,11 +66,14 @@ function App() {
         <Route exact path="/addcuspay" element={<PaymentCustomer />} />
         </Routes>
 
+
         {/* charya */} 
         {/*<Routes>
           <Route exact path="/addCategories" element={<AddCategories />} />
          </Routes> */}
 
+
+        {/* Sanjaya - IT20156510 */} 
         <Routes>
         <Route exact path="/Supplier_Home" element={<Supplier_Home />} />
         <Route exact path="/Supplier_Details" element={<Supplier_Details />} />
