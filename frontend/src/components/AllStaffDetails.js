@@ -39,7 +39,7 @@ export default function AllStaffDetails(){
     return(
         <div className="container"><br/>
             <nav className="nav">
-            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/adminHome" className="nav-link">Home</Link>
         </nav><br/><br/> 
             <div className="container">
           <table>
@@ -98,8 +98,7 @@ export default function AllStaffDetails(){
                    
 
                     
-                    <td><button className="btn btn-warning custom"><a className="nounderline" style={{color:'white'}} ><i className="fas fa-edit"></i>&nbsp;Edit</a></button><br/><br/>
-                    <button className="btn btn-danger custom" onClick = {() =>onDelete(val.staffID)}><a className="nounderline" style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button></td>
+                    <td><button className="btn btn-danger custom" onClick = {() =>onDelete(val.staffID)}><a className="nounderline" style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button></td>
 
                   </tr>
                    ))}
