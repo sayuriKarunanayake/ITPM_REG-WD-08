@@ -1,87 +1,88 @@
-//write all http request for crud
-const express = require('express');
-const Items = require('../models/items');
+//////write all http request for crud
+const express = require("express");
 const router =  express.Router();
+const multer = require("multer")
+const Items = require("../models/items");
 
-//save new request
-router.post('/item/save',(req,res)=>{
-    let newItem = new Items(req.body) //access frontend detail
- 
-    newItem.save((err)=>{
 
-        if(err){
-            return res.status(400).json({
-                error:err
-            });
-        }
-        return res.status(200).json({
-            success:"Item saved Successfully"
-        });
+const storage = multer.diskStorage({
+    destination: (req, file, callback) => {
+        callback(null, "uploads/");
+},
+filename: (req, file, callback) => {
+    callback(null, file.originalname); ///image saved name
+}
+})
+
+//create upload variable and add storage const details
+const upload = multer({storage:storage});
+
+////request add new item
+
+router.post("/items/add", upload.single("itemimage"),(req,res) => {
+    const newItem = new Items({
+        itemcode: req.body.itemcode,
+        category: req.body.category,
+        itemname: req.body.itemname,
+        itemprice: req.body.itemprice,
+        itemdescription: req.body.itemdescription,
+        date: req.body.date,
+        itemimage: req.file.originalname,
     });
+
+console.log('destination: ', req.file.destination, ' filename: ', req.file.filename, ' path: ', req.file.path)
+
+newItem
+.save()
+.then(() => res.json("New Item Posted!"))
+.catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
-//read new product request
+////request get all items
 
-router.get('/items',(req,res)=>{
-    Items.find().exec((err,items)=>{
-        if(err){
-            return res.status(400).json({
-                error:err
-            });
-        }
-    return res.status(200).json({
-        success:true, 
-        existingItems : items
-    });
-    
-    });
+router.get("/items",(req,res)=>{
+    Items.find()
+    .then((item)=> res.json(item))
+    .catch((err) => res.status(400).json(`Error: ${err}`));
 });
+
+
 //get a specific Request
-router.get("/item/:id",(req,res)=>{
-    let itemId = req.params.id;     //pass post's id as parameter
-    
-Items.findById(itemId,(err,item)=>{
-    if(err){
-        return res.status(400).json({success:false,err});
-    }
-        return res.status(200).json({
-            success:true,
-            item
-        });
-});
- });
-//update Item
-router.put('/item/update/:id',(req,res)=>{
-    Items.findByIdAndUpdate(
-        req.params.id,
-        {
-            $set:req.body
-        },
-    (err,item)=>{
-        if(err){
-            return res.status(400).json({error:err});
-        }
-    return res.status(200).json({
-        success:"Updated Sucessfully "
-    });
-    }
-    );
+router.get("/items/:id", (req,res) => {
+    Items.findById(req.params.id)
+    .then((item) => res.json(item))
+    .catch((err) => res.status(400).json(`Error: ${err}`)); 
 });
 
 
+////request update Item
+router.put('/items/update/:id',upload.single("itemimage"), (req,res) => {
+    Items.findById(req.params.id)
+    .then((item) => {
+        item.itemcode = req.body.itemcode;
+        item.category = req.body.category;
+        item.itemname = req.body.itemname;
+        item.itemprice =  req.body.itemprice;
+        item.itemdescription = req.body.itemdescription;
+        item.date = req.body.date;
+        item.itemimage =  req.file.originalname;
+
+        item
+        .save()
+        .then(() => res.json("Item Updated Successfully!!"))
+        .catch((err)=> res.status(400).json(`Error: ${err}`));
+
+    })
+    .catch((err)=> res.status(400).json(`Error: ${err}`));
+});
+ 
+      
 //cancel item
-router.delete('/item/delete/:id',(req,res)=>{
-    Items.findByIdAndRemove(req.params.id).exec((err,deletedItem) =>{
-        if(err)
-            return res.status(400).json({
-                message:"Delete Unsuccessful",err
-            
-    });
-    return res.status(200).json({
-        message:"Delete Sucessfully",deletedItem
+router.delete('/items/:id',(req , res) => {
+    Items.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Item is Deleted !!"))
+    .catch((err)=> res.status(400).json(`Error: ${err}`));
 });
 
-    });
-});
 module.exports = router;
 
