@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import {Col,Container,Row,Carousel,Button,Card,ListGroup,ListGroupItem} from 'react-bootstrap';
+import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 const Home = () => {
 const [items, setItems] = useState([]);
@@ -60,11 +61,11 @@ return(
     
          <div>
         <div className ="container py-5">
-      <centre><h1>Products</h1></centre>
-        <table><tbody>
+      <centre><h1>Our Products</h1></centre>
+       
             {items.map((item ,key) => (
 
-                <Card style={{ width: '25rem' }}>
+                <Card style={{ width: '300px', float: 'left', padding:'40px' }}>
                 <Card.Img variant="" src={item.itemimage} />
                 <Card.Body>
                   <Card.Title>{item.itemname}</Card.Title>
@@ -75,14 +76,16 @@ return(
         <ListGroupItem>{item.itemprice}</ListGroupItem>
         <ListGroupItem>{item.itemdescription}</ListGroupItem>
   </ListGroup>
-                  <Button variant="primary"><a href = "/addorder" style={{textDecoration:'none',color:'Black'}}>Buy Now</a></Button>
+                  <Button variant="primary">Buy Now<a href = "/addorder" style={{textDecoration:'none',color:'white'}}></a></Button>
                 </Card.Body>
+              
               </Card>
+              
+            
             ))}
-        </tbody>
-        </table>
+         
         <br></br>
-        <Button><a href = "/addrequest" style={{textDecoration:'none',color:'white'}}>New Customer Requests</a></Button>&nbsp;
+       
   </div> </div> 
 
     </Col>

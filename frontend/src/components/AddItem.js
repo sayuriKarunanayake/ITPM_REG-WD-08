@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import styled from "styled-components";
 import axios from "axios";
 import {Button,Card} from 'react-bootstrap';
 
@@ -101,7 +102,7 @@ return (
                 value = {itemdescription}
                 onChange = {(e) => setItemdescription(e.target.value)}
                 className="form-control"
-                rows = "4"
+                rows = "1"
                 placeholder="Enter Item Description" /></div>
 
 <div className = "form-group" style={{marginBottom:'15px'}}> 

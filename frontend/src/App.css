@@ -295,4 +295,23 @@
  }
  
  
+
+.addcate{
+  background: url('./Assets/img1.jpg') no-repeat center/cover;
+  height: 1000px ;
+  
+}
+.catego{
+  background: url('./Assets/img2.jpg') no-repeat center/cover;
+  height: 250px ;
+  
+  
+}
+
+
+
+    .buttonnew{
+       position: relative;
+       top: 400px;
+    }
    
