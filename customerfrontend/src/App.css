@@ -169,7 +169,7 @@
   margin: 4px 2px;
   cursor: pointer;
 }
-
+ 
 .addf{
  
   background-image: url(./assets/backg.jpg);
@@ -306,4 +306,23 @@
 
 .c14{
   background:#FF0000 ;
+}
+
+
+.addorder{
+ 
+  background-image: url(./assets/orderbg.jpg);
+  background-size: cover;
+  
+  width: cover;
+
+}
+
+.adminorder{
+ 
+  background-image: url(./assets/adminobg.jpg);
+  background-size: cover;
+  
+  width: cover;
+
 }

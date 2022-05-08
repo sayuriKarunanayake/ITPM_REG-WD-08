@@ -36,7 +36,7 @@ return(
                  <tr><label>{item.category}</label></tr>
                 <tr><label>{item.itemname}</label></tr>
                 <tr><label>{item.itemprice}</label></tr>
-                <tr><label>{item.itemdescrition}</label></tr>
+                <tr><label>{item.itemdescription}</label></tr>
                 <tr><label>{item.date}</label></tr> 
 
                    

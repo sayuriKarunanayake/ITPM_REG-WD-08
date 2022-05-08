@@ -19,8 +19,7 @@ const Header = () => {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              
             <Navbar.Brand href="/home">Royal LifeStyle Store  🐾 </Navbar.Brand>
-        
-
+      
 
 
         

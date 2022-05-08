@@ -155,7 +155,7 @@ export default function AllOrders(){
     const marginLeft = 40;
     const doc = new jsPDF( orientation , unit , size ); //create document
     //pdf data
-    const title = `Royal lifestyle ${itemName} orders`;
+    const title = `Royal lifestyle ${itemName} order for ${username} `;
      const Eitemname = `Item Name: ${itemName} `;
     const EitemCode = `Item code: ${itemCode} `;
     const Eitemcolour = `Item Colour: ${itemColour} `;
@@ -164,31 +164,30 @@ export default function AllOrders(){
      
     
     doc.setFontSize( 20 );
-    doc.text (150, 40,title);
+    doc.text (150, 70,title);
     doc.text(60, 250, Eitemname);  
     doc.text(60, 300, EitemCode);  
      doc.text(60, 350,  Eitemcolour); 
      doc.text(60, 400,  Eusername);
 
-       doc.save (`Orders-for-${username}-${itemCode}.pdf`)  //save pdf
+       doc.save (`Order-for-${username}-${itemCode}.pdf`)  //save pdf
     }
     
 
 
 
     return (
-<div> 
+<div  className='adminorder'>  
         <br></br>
 
         <blockquote class="blockquote"><center>
-   <h1 class="mb-0">Complaints and Feedbacks for Drivers</h1>
-   <p class="blockquote-footer">thoughts of our Passengers....<cite title="Source Title"> </cite></p> </center>
+   <h1 class="mb-0"> Manage Order details</h1>
+   <p class="blockquote-footer">orderes from our customers....<cite title="Source Title"> </cite></p> </center>
  </blockquote>
- <Button variant="light"><a href="/readorder">Generate PDF </a></Button>{' '}
 
 <br></br>
       <div className="App">
-            Search <input type="text" placeholder="Search here by email" onChange={e =>{setSearch(e.target.value) }} />
+            Search <input type="text" placeholder="Search here by username" onChange={e =>{setSearch(e.target.value) }} />
           <br></br><br></br>
 
  
@@ -212,7 +211,7 @@ export default function AllOrders(){
               if(search === ""){
                   return Order
               }
-              else if(Order.itemName.toLowerCase().includes(search.toLowerCase())){
+              else if(Order.username.toLowerCase().includes(search.toLowerCase())){
                 return Order
             }
               
@@ -225,9 +224,9 @@ export default function AllOrders(){
             <td>{Order.itemColour}</td>
             <td>{Order.username}</td>
             
-              <td> 
+         
             <Button variant="warning" style={{height: 40, width: 100, marginLeft: 50}}  onClick={()=> UpdateOrderDetails(Order)}  >Update </Button>
-            </td> 
+       
 
             <a className="btn btn-danger" style={{height: 40, width: 100, marginLeft: 50}}  onClick={() => onDelete(Order._id)} href="/updateorder">Delete</a> {' '}  
              

@@ -44,7 +44,9 @@ import Add_Supplier_Payment from './components/Add_Supplier_Payment';
 //IT20198954
 import AdminEditDelivery from './components/AdminEditDelivery';
 import AdminEditOrder from './components/AdminEditOrders';
-
+import AllFeedbacks from './components/ViewFeedbacks';
+import GenerateOrderReport from './components/ItemPDFReport';
+import OrderHandler from './components/OrderHome';
 
 function App() {
   return (
@@ -88,6 +90,7 @@ function App() {
          </Routes> 
 
 
+
         {/* Sanjaya - IT20156510 */} 
         <Routes>
         <Route exact path="/Supplier_Home" element={<Supplier_Home />} />
@@ -107,6 +110,10 @@ function App() {
        <Routes>
        <Route exact path="/updateorder" element={<AdminEditOrder />} />
        <Route exact path="/updatedelivery" element={<AdminEditDelivery />} />
+       <Route exact path="/readf" element={<AllFeedbacks />} />
+       <Route exact path="/orderhome" element={<OrderHandler />} />
+       <Route exact path="/readOrder" element={<GenerateOrderReport />} />
+
        </Routes>
 
           

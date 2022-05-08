@@ -218,16 +218,16 @@ export default function AllDelivery(){
    
     
     doc.setFontSize( 20 );
-    doc.text (150, 40,title);
+    doc.text (150, 60,title);
      
-    doc.text(60, 250, Eusername);  
-     doc.text(60, 300,  EcontactNumber); 
-     doc.text(60, 350,  Eemail);
-     doc.text(60, 400, Ehomeno);  
-     doc.text(60, 450, Estreet);  
-    doc.text(60, 500,  Ecity);  
-     doc.text(60, 550,  Eprovince); 
-     doc.text(60, 600,  EdeliveryTime);
+    doc.text(60, 150, Eusername);  
+     doc.text(60, 200,  EcontactNumber); 
+     doc.text(60, 250,  Eemail);
+     doc.text(60, 300, Ehomeno);  
+     doc.text(60, 350, Estreet);  
+    doc.text(60, 400,  Ecity);  
+     doc.text(60, 450,  Eprovince); 
+     doc.text(60, 500,  EdeliveryTime);
 
        doc.save (`Delivery-for-${username}.pdf`)  //save pdf
     }
@@ -236,12 +236,12 @@ export default function AllDelivery(){
 
 
     return (
-<div> 
+<div className='adminorder'> 
         <br></br>
 
         <blockquote class="blockquote"><center>
-   <h1 class="mb-0">Complaints and Feedbacks for Drivers</h1>
-   <p class="blockquote-footer">thoughts of our Passengers....<cite title="Source Title"> </cite></p> </center>
+   <h1 class="mb-0">Manage Delivery Details</h1>
+   <p class="blockquote-footer">details of users....<cite title="Source Title"> </cite></p> </center>
  </blockquote>
 
 <br></br>
@@ -256,15 +256,15 @@ export default function AllDelivery(){
 <thead class="thead-dark">
 <tr>          
   <th>ID</th> 
-<th>username</th>
-<th>contactNumber</th>
-<th>email</th>
+<th>Name</th>
+<th>ContactNumber</th>
+<th>Email</th>
  
- <th>homeno</th>
- <th>street</th>
-<th>city</th>
-<th>province</th>
-<th>preferred delivery Time</th>
+ <th>Homeno</th>
+ <th>Street</th>
+<th>City</th>
+<th>Province</th>
+<th>Preferred delivery Time</th>
 <th> </th>
 </tr>
 </thead>
@@ -292,13 +292,13 @@ export default function AllDelivery(){
             <td>{Delivery.deliveryTime}</td>
 
             
-            <Button variant="warning" style={{height: 40, width: 100, marginLeft: 30}} onClick={()=> UpdateDeliveryDetails(Delivery)}  >Update </Button>
+            <Button variant="warning" style={{height: 40, width: 100, marginLeft: 30, marginTop: 9}} onClick={()=> UpdateDeliveryDetails(Delivery)}  >Update </Button>
             
 
-            <a className="btn btn-danger  " style={{height: 40, width: 100, marginLeft: 30}} onClick={() => onDelete(Delivery._id)} href="/updatedelivery">Delete</a> {' '}  
+            <a className="btn btn-danger  " style={{height: 40, width: 100, marginLeft: 30, marginTop: 9}} onClick={() => onDelete(Delivery._id)} href="/updatedelivery">Delete</a> {' '}  
        
                  
-                <Button variant="outline-dark" style={{height: 40, width: 150, marginLeft: 30}} onClick = {()=>createPDF(Delivery._id,Delivery.username,Delivery.contactNumber,Delivery.email,Delivery.homeno,Delivery.street,Delivery.city,Delivery.province, Delivery.deliveryTime )} >Generate PDF</Button>
+                <Button variant="outline-dark" style={{height: 40, width: 150, marginLeft: 30,marginTop: 9}} onClick = {()=>createPDF(Delivery._id,Delivery.username,Delivery.contactNumber,Delivery.email,Delivery.homeno,Delivery.street,Delivery.city,Delivery.province, Delivery.deliveryTime )} >Generate PDF</Button>
 
 
           </tr>

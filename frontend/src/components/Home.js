@@ -60,7 +60,7 @@ return(
     
          <div>
         <div className ="container py-5">
-      <centre><h1>Products</h1></centre>
+      <centre><h1>Our Products</h1></centre>
         <table><tbody>
             {items.map((item ,key) => (
 
@@ -73,7 +73,7 @@ return(
         <ListGroupItem>{item.itemcode}</ListGroupItem>
         <ListGroupItem>{item.category}</ListGroupItem>
         <ListGroupItem>{item.itemprice}</ListGroupItem>
-        <ListGroupItem>{item.itemdescrition}</ListGroupItem>
+        <ListGroupItem>{item.itemdescription}</ListGroupItem>
   </ListGroup>
                   <Button variant="primary">Buy Now</Button>
                 </Card.Body>
