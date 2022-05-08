@@ -21,7 +21,12 @@ import AllStaffDetails from './components/AllStaffDetails';
 import AdminHome from './components/AdminHome';
 
 //charya
-//import AddCategories from './components/AddCategories';
+import AddItem from './components/AddItem';
+import EditItems from './components/EditItems';
+import {AllItems} from './components/Items';
+import Allnewrequests from './components/Allnewrequests';
+import ItemCategoryManagement from './components/ItemandCategoryManagement';
+import GenerateItemReport from './components/GenerateItemReport';
 
 
 //IT20156510
@@ -38,7 +43,9 @@ import Add_Supplier_Payment from './components/Add_Supplier_Payment';
 //IT20198954
 import AdminEditDelivery from './components/AdminEditDelivery';
 import AdminEditOrder from './components/AdminEditOrders';
-
+import AllFeedbacks from './components/ViewFeedbacks';
+import GenerateOrderReport from './components/ItemPDFReport';
+import OrderHandler from './components/OrderHome';
 
 function App() {
   return (
@@ -71,10 +78,18 @@ function App() {
         </Routes>
 
 
-        {/* charya */} 
-        {/*<Routes>
-          <Route exact path="/addCategories" element={<AddCategories />} />
-         </Routes> */}
+
+
+        {/* charya - IT20192532*/} 
+        <Routes>
+          <Route exact path="/additems" element={<AddItem />} />
+          <Route exact path="/edititems/:id" element={<EditItems />} />
+          <Route exact path="/allitems" element={<AllItems />} />
+          <Route exact path="/newrequests" element={<Allnewrequests />} />
+          <Route exact path="/itemandcategoryHome" element={<ItemCategoryManagement />} />
+          <Route exact path="/reportgene" element={<GenerateItemReport />} />
+         </Routes> 
+ 
 
 
         {/* Sanjaya - IT20156510 */} 
@@ -96,6 +111,10 @@ function App() {
        <Routes>
        <Route exact path="/updateorder" element={<AdminEditOrder />} />
        <Route exact path="/updatedelivery" element={<AdminEditDelivery />} />
+       <Route exact path="/readf" element={<AllFeedbacks />} />
+       <Route exact path="/orderhome" element={<OrderHandler />} />
+       <Route exact path="/readOrder" element={<GenerateOrderReport />} />
+
        </Routes>
 
           

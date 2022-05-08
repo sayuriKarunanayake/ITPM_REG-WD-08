@@ -18,7 +18,7 @@ export default function AddOrder(){  //adding function
     
   function sendData(e){  //create event send data
 
-    if( !itemName || !itemCode ||  !itemColour || !username   ){
+    if( !itemName || !itemCode || !username   ){
       alert("Please fill all the fields!");
       window.location = `/adddorder`;
       return
@@ -96,13 +96,22 @@ export default function AddOrder(){  //adding function
        <option>Choose</option>
       <option>Perfume</option>
       <option>Shoe</option>
-      <option>Schol Bag</option>
-      <option>Hand Bag</option>
-      <option>Shoe</option>
-      <option>Slippes</option>
-      <option>Schol Bag</option>
-      <option>Hand Bag</option>
+      <option>Tables</option>
+      <option>Baking Tray</option>
+      <option>Blender</option>
+      <option>Bowl</option>
+      <option>Electric cattle</option>
+      <option>frying pan</option>
+      <option>Mixer</option>
       <option>Oven</option>
+      <option>Plate</option>
+      <option>Computers</option>
+      <option>Tablets</option>
+      <option>Desks</option>
+      <option>Tables</option>
+      <option>Schol Bag</option>
+      <option>Hand Bag</option>
+      <option>Circuit Breakers</option>
     </select> 
   </div>
 
@@ -118,10 +127,11 @@ export default function AddOrder(){  //adding function
 
   <div class="form-group ">
         <i className="zmdi zmdi-account zmdi-hc-2x"></i> 
-    <label for=" itemColour" className="labels">Item Colour</label>
+    <label for=" itemColour" className="labels">  Style Colour </label>
     <select class="custom-select custom-select-lg mb-3" id="itemColour"  onChange={(e)=>{
       setItemColour(e.target.value);
      }}   >  
+     <option class="c1">Available only for fashion items</option>
       <option class="c1">White      #FFFFFF</option>
       <option class="c2" >Black     #000000</option>
       <option class="c3">Silver	    #C0C0C0</option>
