@@ -38,7 +38,7 @@ export default function StaffLogin(){
                             history(`/adminHome`);
                         }
                         else{
-                            history(`/addStock`)
+                            history(`/itemandcategoryHome`)
                         }
 
                     }

@@ -19,12 +19,11 @@ const ItemandCategoryManagement=()=>{
                       <Toolbar>
                     
                      
-                      <a className="btn btn-danger btn-lg"   href="/addcategory" style={{height: 50, width: 300, marginLeft: 50,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i> View Order Details</a> {' '} 
-                     <a className="btn btn-danger btn-lg" href="/allcategories" style={{height: 50, width: 300, marginLeft: 125,background:'#800080'}}><i class="zmdi zmdi-info-outline"> </i> View Delivery Details</a> {' '} 
+                     <a className="btn btn-danger btn-lg" href="/edititems/:id" style={{height: 50, width: 300, marginLeft: 100,background:'#800080'}}><i class="zmdi zmdi-info-outline"> </i>Edit Items</a> {' '} 
                     
-                     <a className="btn btn-danger btn-lg" href="/additems" style={{height: 50, width: 300, marginLeft: 125,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>  Manage Order Details</a> {' '} 
-                         <a className="btn btn-danger  btn-lg" href="/allitems" style={{height: 50, width: 300, marginLeft: 125,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>   Manage Delivery Details</a> {' '} 
-                         <a className="btn btn-danger  btn-lg" href="/newrequests" style={{height: 50, width: 300, marginLeft: 125,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>   Manage Delivery Details</a> {' '} 
+                     <a className="btn btn-danger btn-lg" href="/additems" style={{height: 50, width: 300, marginLeft: 100,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>Add Items</a> {' '} 
+                         <a className="btn btn-danger  btn-lg" href="/allitems" style={{height: 50, width: 300, marginLeft: 100,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>View All Items</a> {' '} 
+                         <a className="btn btn-danger  btn-lg" href="/newrequests" style={{height: 50, width: 300, marginLeft: 50,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>View Customer requests</a> {' '} 
 
                          </Toolbar>
             </Navbar>
