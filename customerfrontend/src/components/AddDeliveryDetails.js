@@ -54,7 +54,7 @@ export default function AddDelivery(){  //adding function
      axios.post(`http://localhost:8070/delivery/adddelivery`, newDelivery).then(() =>{  //route from the backend
 
         alert("Delivery details Added.**To change delivery details please contact royallifestyle12@gmail.com**") //display if adding is successful
-        window.location = `/signin`;   //redirect to adding page
+        window.location = `/addcuspay`;   //redirect to adding page
      }).catch((err) =>{   //display error if adding is not successful
         alert(err)
      })
@@ -86,7 +86,7 @@ export default function AddDelivery(){  //adding function
               </Tabs>  
 
               <Tabs sx={{ml:"auto"}}   value={value} onChange={(e,val)=>setValue(val)} >
-            <div><a href="/addpayment"><img style={{height: 70, width: 90, marginLeft:432}}   src="https://cdn-icons-png.flaticon.com/512/4108/4108042.png"  ></img></a>
+            <div><a href="/addcuspay"><img style={{height: 70, width: 90, marginLeft:432}}   src="https://cdn-icons-png.flaticon.com/512/4108/4108042.png"  ></img></a>
              NEXT STEP 3
             </div> 
               </Tabs>
@@ -200,8 +200,8 @@ export default function AddDelivery(){  //adding function
 </div>
 <br></br>
  
-  <Button type="submit" className="btnspace"  >Submit</Button>   
-  <a className="btn btn-light btn-lg"  href="/signin"> Payment</a>  
+  <Button type="submit" className="btnspace"  >Pay Now</Button>   
+  
     
   <br></br><br></br><br></br><br></br><br></br>
 </form>

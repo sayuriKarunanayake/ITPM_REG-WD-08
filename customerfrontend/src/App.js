@@ -14,7 +14,8 @@ import AllOrders from './components/AdminEditOrders';
 import OrderHandler from './components/OrderHome';
 import AllDelivery from './components/AdminEditDelivery';
  
-
+//IT20197032
+import PaymentCustomer from './components/PaymentCustomer';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
               <Route exact path="/adddelivery" element={<AddDelivery />} />
               <Route exact path="/updatedelivery" element={<AllDelivery/>} />
                
+              {/* Sayuri - IT20197032 */}
+              <Route exact path="/addcuspay" element={<PaymentCustomer/>}/>
+
 
 <Route exact path="/orderhome" element={<OrderHandler />} />
 

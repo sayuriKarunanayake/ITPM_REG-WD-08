@@ -35,7 +35,9 @@ import Add_Payment_Details from './components/Add_Payment_Details';
 import Supplier_Payment_Details from './components/Supplier_Payment_Details';
 import Add_Supplier_Payment from './components/Add_Supplier_Payment';
 
-
+//IT20198954
+import AdminEditDelivery from './components/AdminEditDelivery';
+import AdminEditOrder from './components/AdminEditOrders';
 
 
 function App() {
@@ -90,7 +92,11 @@ function App() {
 
         </Routes>
         
-       
+       {/*Thisara - IT20198954 */}
+       <Routes>
+       <Route exact path="/updateorder" element={<AdminEditOrder />} />
+       <Route exact path="/updatedelivery" element={<AdminEditDelivery />} />
+       </Routes>
 
           
 

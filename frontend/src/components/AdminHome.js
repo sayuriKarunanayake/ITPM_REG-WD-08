@@ -12,6 +12,8 @@ export default function AdminHome(){
                 <tr>
                 <td><button className="btn btn-primary customhome"><a className="nounderline" href={`/allstaff`} style={{color:"white"}} ><i class="fas fa-info-circle"></i>&nbsp;Staff Details</a></button></td>
                 <td><button className="btn btn-primary customhome"><a className="nounderline" href={`/cusPay`}  style={{color:"white"}}><i class="fas fa-info-circle"></i>&nbsp;Customer Payments</a></button></td>
+                <td><button className="btn btn-primary customhome"><a className="nounderline" href={`#`}  style={{color:"white"}}><i class="fas fa-info-circle"></i>&nbsp;Order Home</a></button></td>
+                
    
                 </tr>
                 </table>
