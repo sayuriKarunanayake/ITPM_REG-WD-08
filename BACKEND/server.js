@@ -46,6 +46,12 @@ app.use("/register",registerRouter); //create register routes
 const feedbackRouter =require("./routes/Feedback.js"); //import  feedback routes
 app.use("/feedback",feedbackRouter); //create feedback routes
 
+const orderRouter =require("./routes/Order.js"); //import  order routes
+app.use("/order",orderRouter); //create order routes
+
+const deliveryRouter =require("./routes/Delivery.js"); //import  Delivery routes
+app.use("/delivery",deliveryRouter); //create Deliveryroutes
+
 
 //IT20192532
 //import routes
