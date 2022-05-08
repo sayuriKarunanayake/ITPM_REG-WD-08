@@ -24,6 +24,20 @@ import AllStaffDetails from './components/AllStaffDetails';
 //import AddCategories from './components/AddCategories';
 
 
+//IT20156510
+import Supplier_Home from './components/Supplier_Home';
+import Supplier_Details from './components/Supplier_Details';
+import Supplier_Registration from './components/Supplier_Registration';
+
+import Payment_Details from './components/Payment_Details';
+import Add_Payment_Details from './components/Payment_Details';
+
+import Supplier_Payment_Details from './components/Supplier_Payment_Details';
+import Add_Supplier_Payment from './components/Add_Supplier_Payment';
+
+
+
+
 function App() {
   return (
     <Router>
@@ -56,6 +70,20 @@ function App() {
         {/*<Routes>
           <Route exact path="/addCategories" element={<AddCategories />} />
          </Routes> */}
+
+        <Routes>
+        <Route exact path="/Supplier_Home" element={<Supplier_Home />} />
+        <Route exact path="/Supplier_Details" element={<Supplier_Details />} />
+        <Route exact path="/Supplier_Registration" element={<Supplier_Registration />} />
+        
+        <Route exact path="/Payment_Details" element={<Payment_Details />} />
+        <Route exact path="/Add_Payment_Details" element={<Add_Payment_Details />} />
+        
+        <Route exact path="/Supplier_Payment_Details" element={<Supplier_Payment_Details />} />
+        <Route exact path="/Add_Supplier_Payment" element={<Add_Supplier_Payment />} />
+        
+
+        </Routes>
         
        
 

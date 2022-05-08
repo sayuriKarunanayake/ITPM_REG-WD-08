@@ -58,6 +58,13 @@ app.use(nrequestRoutes);
 app.use(itemRoutes);
 
 //Sanjaya
+const postRoutesSupplier_Registration = require('./routes/Supplier_Registration');
+const postRoutesPayment_Details = require('./routes/Payment_Details');
+const postRoutesSupplier_Payment = require('./routes/Supplier_Payment');
+
+app.use(postRoutesSupplier_Registration);
+app.use(postRoutesPayment_Details);
+app.use(postRoutesSupplier_Payment);
 
 
 
