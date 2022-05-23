@@ -37,7 +37,7 @@ export default function AllStaffDetails(){
   }
 
     return(
-        <div className="container"><br/>
+        <div className="container" ><br/>
             <nav className="nav">
             <Link to="/adminHome" className="nav-link">Home</Link>
         </nav><br/><br/> 

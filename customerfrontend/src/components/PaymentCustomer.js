@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import axios from "axios";
+import { Form, Button,Navbar,Nav,NavDropdown} from "react-bootstrap";
 //import { Link } from "react-router-dom";
+
 
 export default function PaymentCustomer(){
     const [cardType,setcardType] = useState("");
@@ -40,7 +42,7 @@ export default function PaymentCustomer(){
 
     return(
     <>
-        <div style = {{paddingTop : "50px",paddingBottom : "50px",paddingLeft:"550px"}}>
+        <div className="addorder" style = {{paddingTop : "50px",paddingBottom : "50px",paddingLeft:"550px"}}>
             <table border="1" style = {{width:"50%"}}>
                 <br/><br/><h3 style = {{textAlign : 'center'}}>Payment</h3><br/><br/>
                 <div className='container'>
@@ -97,8 +99,8 @@ export default function PaymentCustomer(){
                     </div><br/><br/>
 
                     <table>
-                    <td><button type="submit" className="btn btnEmp btn-primary"><i class="fas fa-money-bill"></i>&nbsp;Pay</button></td>
-                    <td><button type="reset" className="btn btnEmp btn-secondary"><i class="fas fa-eraser"></i>&nbsp;Clear</button></td>
+                    <td><Button type="submit" className="btnspace"><i class="fas fa-money-bill"></i>&nbsp;Pay</Button></td>
+                    <td><button type="reset" className="btn btn-light btn-lg"><i class="fas fa-eraser"></i>&nbsp;Clear</button></td>
                 </table>
                 </form>
             
