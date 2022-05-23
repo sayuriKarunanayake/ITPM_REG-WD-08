@@ -76,7 +76,7 @@ return(
         <ListGroupItem>{item.itemprice}</ListGroupItem>
         <ListGroupItem>{item.itemdescription}</ListGroupItem>
   </ListGroup>
-                  <Button variant="primary">Buy Now<a href = "/addorder" style={{textDecoration:'none',color:'white'}}></a></Button>
+                  <Button variant="primary"><a href = "/addorder" style={{textDecoration:'none',color:'white'}}>Buy Now</a></Button>
                 </Card.Body>
               
               </Card>
