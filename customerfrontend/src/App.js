@@ -9,7 +9,7 @@ import NavBar from './components/Header';
 import Footer from './components/Footer';
 import AddOrder from './components/AddOrder';
 import AddDelivery from './components/AddDeliveryDetails';
- 
+
  
  
  
@@ -20,6 +20,7 @@ import PaymentCustomer from './components/PaymentCustomer';
 //IT20192532
 import AddNewProductRequest from './components/AddNewProductRequest';
 import Home from './components/Home';
+import ViewAllnewrequests from './components/ViewAllrequests';
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
               {/*Charya - IT20192532 */}
               <Route exact path="/addrequest" element={<AddNewProductRequest/>}/>
               <Route exact path="/" element={<Home/>}/>
-
+              <Route exact path="/vnewrequests" element={<ViewAllnewrequests/>}/>
  
 
          </Routes>

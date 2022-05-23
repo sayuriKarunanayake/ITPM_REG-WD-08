@@ -18,6 +18,7 @@
     "react-bootstrap": "^2.3.1",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
+    "react-script": "^2.0.5",
     "react-scripts": "5.0.1",
     "router-dom": "^2.2.9",
     "styled-components": "^5.3.5",

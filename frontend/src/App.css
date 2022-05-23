@@ -295,7 +295,7 @@
  }
  
  
-
+/*IT20192532*/
 .addcate{
   background: url('./Assets/img1.jpg') no-repeat center/cover;
   height: 1000px ;
@@ -306,12 +306,50 @@
   height: 250px ;
   
   
+  
 }
-
-
-
-    .buttonnew{
+.buttonnew{
        position: relative;
        top: 400px;
     }
-   
+
+    /*home*/
+.banner {
+  /* The image used */
+  background-image:
+  url('./Assets/img4.jpg');
+  height: 500px;
+ 
+ 
+}
+    .banner2 {
+      /* The image used */
+      background-image:
+      url('./Assets/img5.jpg');
+      height: 500px;
+     
+     
+    }
+    .banner3 {
+      /* The image used */
+      background-image:
+      url('./Assets/img6.jpeg');
+      height: 800px;
+      width: 1300px;
+     
+    }
+    .hocard{
+         box-shadow: 0 4px 8px 0 rgba(49, 6, 6, 0.2);
+         transition: 0.1s;
+         border-radius: 30px;
+         width: '20%';
+         float:left;
+         padding:10px;
+         
+         
+       }
+       
+   .hocard:hover {
+         box-shadow: 0 10px 16px 0 rgba(222, 23, 23, 0.2);
+       }
+       

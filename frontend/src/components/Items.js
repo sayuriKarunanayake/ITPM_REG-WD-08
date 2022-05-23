@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import axios from "axios";
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import {Col,Container,Row,Button,Card,ListGroup,ListGroupItem} from 'react-bootstrap';
+//import  './App.css';
 
 const AllItems = () => {
 const [items, setItems] = useState([]);
 
+//get items
 axios.get("/items")
 .then((res) => {
     setItems (res.data); 
@@ -22,37 +23,42 @@ const deleteItem = (id) => {
 
  
 return(
-    <div className="container">
-        <div className= 'addcate'>
-        <div className ="container py-5">
-        <h1>All Items</h1>
-        <table><tbody>
+    <div className='addcate'>
+    <Container>
+    <Row>
+        <Col>
+            <center><h1>All Items</h1></center>
             {items.map((item ,key) => (
 
-                <Card className="text-right"> 
-                 <Card.Body>
-                <tr><img src = {item.itemimage}/> 
-                 <tr><label>{item.itemcode}</label></tr> 
-                 <tr><label>{item.category}</label></tr>
-                <tr><label>{item.itemname}</label></tr>
-                <tr><label>{item.itemprice}</label></tr>
-                <tr><label>{item.itemdescription}</label></tr>
-                <tr><label>{item.date}</label></tr> 
+        <Card style={{ width: '300px', float:'left',padding:'40px'}}>
+        <div className='hocard'>
+            <Card.Img variant="top" src = {item.itemimage}/> 
+            <Card.Body>
+                <Card.Title>{item.itemname}</Card.Title>
+                <ListGroup className="list-group-flush">
+                <ListGroupItem>{item.itemcode}</ListGroupItem>
+                <ListGroupItem>{item.category}</ListGroupItem>
+                <ListGroupItem>{item.itemprice}</ListGroupItem>
+                <ListGroupItem>{item.itemdescription}</ListGroupItem>
+                <ListGroupItem>{item.date}</ListGroupItem> 
+        </ListGroup>
+               
+        <button className='btn btn-danger'  onClick={() => deleteItem(item._id)}>DELETE</button>&nbsp;&nbsp;
+        <button className='btn btn-warning'><a className ="nounderline"  href={`/edititems/${item._id}`} style={{color:'white'}}>EDIT</a></button>
 
-                   
-     <button className='btn btn-danger'  onClick={() => deleteItem(item._id)}>DELETE</button>&nbsp;&nbsp;
-    <a className ="btn btn-warning" href={`/edititems/${item._id}`}>EDIT</a>
-                </tr></Card.Body></Card>
-            ))}
-        </tbody>
-        </table>
+        </Card.Body>
+        </div>
+        </Card>
+        ))}
         <br></br>
-        <Button variant="primary"><a href = "/itemandcategoryHome" style={{textDecoration:'none',color:'Black'}}>Back to Home</a></Button>&nbsp;&nbsp;
         
+        <Button variant="secondary"><a href = "/itemandcategoryHome" style={{textDecoration:'none',color:'Black'}}>Back to Home</a></Button>&nbsp;
         <Button variant="primary"><a href = "/reportgene" style={{textDecoration:'none',color:'Black'}}>Generate Report</a></Button>
-  </div> </div> </div>
-)
-}
+  
+</Col>
+</Row></Container></div>
+)}
+
 export {
     AllItems
 };
