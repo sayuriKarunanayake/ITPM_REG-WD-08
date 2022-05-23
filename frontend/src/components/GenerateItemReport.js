@@ -50,7 +50,7 @@ const GenerateItemReport = () => {
     const filterItem = report=>report.date.substring(5, 7)==date;
 
     return(
-        <div className="container"><br/><br/>
+        <div className="container" style={{paddingLeft:"20px",paddingRight:"100px",height:"800px"}}><br/><br/>
         <nav className="nav">
             <Link to="/items" className="nav-link">Back</Link>
          </nav><br/>

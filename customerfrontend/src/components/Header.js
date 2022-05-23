@@ -22,7 +22,7 @@ const NavBar = () => {
             <a className="nav-link" aria-current="page" href="/readf"><div class="text-secondary">Feedbacks</div></a>
             <a className="nav-link" aria-current="page" href="/addorder"><div class="text-secondary">Buy Now</div></a>
 
-             <a className="nav-link" aria-current="page" href="/newrequests "><div class="text-secondary">Customer New Request</div></a>
+             <a className="nav-link" aria-current="page" href="/addrequest "><div class="text-secondary">Customer New Request</div></a>
             
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

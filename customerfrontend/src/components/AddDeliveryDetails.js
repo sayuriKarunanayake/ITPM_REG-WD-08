@@ -201,7 +201,7 @@ export default function AddDelivery(){  //adding function
 <br></br>
  
   <Button type="submit" className="btnspace"  >Submit</Button>   
-  <a className="btn btn-light btn-lg"  href="/signin"> Payment</a>  
+  <a className="btn btn-light btn-lg"  href="/addcuspay"> Payment</a>  
     
   <br></br><br></br><br></br><br></br><br></br>
 </form>

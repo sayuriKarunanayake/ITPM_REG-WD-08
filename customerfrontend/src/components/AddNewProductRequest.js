@@ -95,8 +95,8 @@ axios.post("/nrequest/save",data).then((res)=>{
  </div>
 
 
-<Button variant="primary"> <a href = "/" type="submit" style={{textDecoration:'none',color:'Black'}}onClick={this.onSubmit}>Send Request</a></Button> &nbsp;
-<Button variant="primary"> <a href = "/Home" type="submit" style={{textDecoration:'none',color:'Black'}}>Cancel</a></Button> &nbsp;
+<Button variant="primary"> <a type="submit" style={{textDecoration:'none',color:'Black'}}onClick={this.onSubmit}>Send Request</a></Button> &nbsp;
+<Button variant="primary"> <a href = "/" type="submit" style={{textDecoration:'none',color:'Black'}}>Cancel</a></Button> &nbsp;
 
 
 </Card.Text>
