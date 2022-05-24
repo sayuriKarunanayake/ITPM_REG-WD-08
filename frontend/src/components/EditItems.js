@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
-import { Button } from "react-bootstrap";
-import { Card } from "react-bootstrap";
+import { Button,Card} from "react-bootstrap";
+
 
 const EditItems = (props) => {
     const [itemcode , setItemcode] = useState("");
@@ -28,6 +28,7 @@ const formData = new FormData(); //create form data object
     formData.append("itemdescription", itemdescription);
     formData.append("date", date);
     formData.append("itemimage", fileName);
+
 
 axios
 .put(`/items/update/${props.match.params.id}`,formData)
@@ -71,19 +72,16 @@ return(
                 <label htmlFor = "itemcode">Item Code</label>
                 <input
                 type = "text"
-                value = {itemcode}
+                value = {itemcode} disabled="disabled"
                 onChange = {(e) => setItemcode(e.target.value)}
                 className="form-control"
                 placeholder="Enter Item Code" /></div>
     
-        <div className = "form-group" style={{marginBottom:'15px'}}> 
-                <label htmlFor = "category">Item Category</label>
-                <input
-                type = "text"
-                value = {category}
-                onChange = {(e) => setcategory(e.target.value)}
-                className="form-control"
-                placeholder="Enter Item  Category" /></div>
+            <div className= "form-group">
+                    <label for="category" className="form-label" >Item Category</label>
+                    <input type = "text" className="form-control form-controlEmp" id="category" 
+                    value={category} disabled="disabled"/>
+                </div>
 
             <div className = "form-group" style={{marginBottom:'15px'}}> 
                 <label htmlFor = "itemname">Item Name</label>
@@ -100,7 +98,7 @@ return(
                 type = "text"
                 value = {itemprice}
                 onChange = {(e) => setItemprice(e.target.value)}
-                className="form-control"
+                className="form-control" required
                 placeholder="Enter Item Price" /></div>
 
             <div className = "form-group" style={{marginBottom:'15px'}}> 
@@ -108,17 +106,17 @@ return(
                 <textarea
                 value = {itemdescription}
                 onChange = {(e) => setItemdescription(e.target.value)}
-                className="form-control"
+                className="form-control" required
                 rows = "4"
                 placeholder="Enter Item Description" /></div>
 
             <div className = "form-group" style={{marginBottom:'15px'}}> 
-                <label htmlFor = "itemcode">Date</label>
+                <label htmlFor = "date">Date</label>
                 <input
                 type = "text"
-                value = {itemcode}
+                value = {date}
                 onChange = {(e) => setDate(e.target.value)}
-                className="form-control"
+                className="form-control" required
                 placeholder="Enter Date" /></div>
 
             <div className = "form-group" style={{marginBottom:'15px'}}> 
@@ -129,7 +127,7 @@ return(
                 </div><br></br>
 
 <Button type="submit" className=" btn btn-primary"> Update Item </Button> &nbsp;
-
+<Button variant="btn btn-secondary"><a href = "/allitems" style={{textDecoration:'none',color:'white'}}>Back</a> </Button> &nbsp;
 </Card.Text>
         </form>
         <br></br>

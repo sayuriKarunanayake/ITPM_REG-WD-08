@@ -20,7 +20,7 @@ import PaymentCustomer from './components/PaymentCustomer';
 import AllStaffDetails from './components/AllStaffDetails';
 import AdminHome from './components/AdminHome';
 
-//charya -IT20197032
+//charya -IT20192532
 import AddItem from './components/AddItem';
 import EditItems from './components/EditItems';
 import {AllItems} from './components/Items';
@@ -82,7 +82,7 @@ function App() {
         {/* charya - IT20192532*/} 
         <Routes>
           <Route exact path="/additems" element={<AddItem />} />
-          <Route exact path="/edititems/:id" element={<EditItems />} />
+          <Route exact path="/edititems/:id" element={<EditItems />}/>
           <Route exact path="/allitems" element={<AllItems />} />
           <Route exact path="/newrequests" element={<Allnewrequests />} />
           <Route exact path="/itemandcategoryHome" element={<ItemCategoryManagement />} />
