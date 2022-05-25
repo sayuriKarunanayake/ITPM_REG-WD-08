@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from "axios";
-import {Col,Container,Row,Button,Card,ListGroup,ListGroupItem} from 'react-bootstrap';
+import {Col,Row,Button,Card,ListGroup,ListGroupItem} from 'react-bootstrap';
 //import  './App.css';
 
 const AllItems = () => {
@@ -17,20 +17,20 @@ console.log(err)
 
 //Delete item by id
 const deleteItem = (id) => {
-    axios.delete(`/items/${id}`).then((response) => alert (response.data));
+    axios.delete(`/items/${id}`).then((response) => alert (response.data)); //alert
     
 };
 
  
 return(
     <div className='addcate'>
-    <Container>
+    
     <Row>
         <Col>
             <center><h1>All Items</h1></center>
             {items.map((item ,key) => (
 
-        <Card style={{ width: '300px', float:'left',padding:'40px'}}>
+        <Card style={{ width: '300px', float:'left',padding:'20px', marginLeft:'10px'}}>
         <div className='hocard'>
             <Card.Img variant="top" src = {item.itemimage}/> 
             <Card.Body>
@@ -56,7 +56,7 @@ return(
         <Button variant="primary"><a href = "/reportgene" style={{textDecoration:'none',color:'Black'}}>Generate Report</a></Button>
   
 </Col>
-</Row></Container></div>
+</Row></div>
 )}
 
 export {

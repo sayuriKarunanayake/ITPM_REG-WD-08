@@ -334,7 +334,7 @@
   background-image:
   url('./assets/img4.jpg');
   height: 500px;
- 
+  width: 81em;
  
 }
     .banner2 {
@@ -342,7 +342,7 @@
       background-image:
       url('./assets/img5.jpg');
       height: 500px;
-     
+      width: 81em;
      
     }
     .banner3 {
@@ -350,11 +350,12 @@
       background-image:
       url('./assets/img6.jpeg');
       height: 800px;
-      width: 1300px;
+      width: 81em;
      
     }
+    /*cards in home and allitems*/
     .hocard{
-      box-shadow: 0 4px 8px 0 rgba(49, 6, 6, 0.2);
+      box-shadow: 0 4px 8px 0 rgba(218, 19, 122, 0.2);
       transition: 0.1s;
       border-radius: 30px;
       width: '20%';
@@ -365,7 +366,7 @@
     }
     
 .hocard:hover {
-      box-shadow: 0 10px 16px 0 rgba(222, 23, 23, 0.2);
+      box-shadow: 0 10px 16px 0 rgba(122, 7, 7, 0.2);
     }
 
     .addcate{
@@ -379,4 +380,8 @@
       
       
     }
-    
+    .hoimg{
+      background: url('./assets/hoimg.jpg') no-repeat center/cover;
+      height: 2000px ;
+      width: 81em;
+    }

@@ -1,9 +1,10 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
 import { Button,Card} from "react-bootstrap";
+import { useParams } from "react-router";
 
 
-const EditItems = (props) => {
+export default function EditItems(){
     const [itemcode , setItemcode] = useState("");
     const [category , setcategory] = useState("");
     const [itemname , setItemname] = useState("");
@@ -13,10 +14,12 @@ const EditItems = (props) => {
     const [message , setMessage] = useState("");
     const [fileName, setFileName] = useState("");
 
+    //add new image
     const onChangeFile = (e) => {
         setFileName(e.target.files[0]);
     };
 
+    //onclick method
     const changeOnClick = (e) => {
         e.preventDefault();
 
@@ -29,18 +32,22 @@ const formData = new FormData(); //create form data object
     formData.append("date", date);
     formData.append("itemimage", fileName);
 
-
 axios
-.put(`/items/update/${props.match.params.id}`,formData)
-.then((res) => setMessage(res.data))
+.put(`/items/update/${id}`,formData)
+.then(() =>{
+    alert("Item Details Updated Successfully!"); //display successful messsage or error when update
+    window.location= `/allitems`;
+})
 .catch((err) => {
        console.log(err);
+       alert(err);
     });
 };
 
+const {id} = useParams();
 useEffect(() => {
     axios
-    .get(`/items/${props.match.params.id}`)
+    .get(`/items/${id}`)
     .then((res) => [
         setItemcode(res.data.itemcode),
         setcategory(res.data.category),
@@ -52,13 +59,13 @@ useEffect(() => {
     ])
 
 .catch((err) => {
-    console.log(err);
+    alert(err);
  });
-},
-[`${props.match.params.id}`]);
+},[]);
+
 
 return(
-<Card className="text-right"> 
+<Card className="text-left"> 
         <div className ="addcate">
         <div className ="container py-5">
             
@@ -113,7 +120,7 @@ return(
             <div className = "form-group" style={{marginBottom:'15px'}}> 
                 <label htmlFor = "date">Date</label>
                 <input
-                type = "text"
+                type = "date"
                 value = {date}
                 onChange = {(e) => setDate(e.target.value)}
                 className="form-control" required
@@ -126,8 +133,8 @@ return(
                 onChange = {onChangeFile}/>
                 </div><br></br>
 
-<Button type="submit" className=" btn btn-primary"> Update Item </Button> &nbsp;
-<Button variant="btn btn-secondary"><a href = "/allitems" style={{textDecoration:'none',color:'white'}}>Back</a> </Button> &nbsp;
+<Button type="submit" className=" btn btn-warning"> Update Item </Button> &nbsp;
+<Button variant="btn btn-secondary"><a href = "/itemandcategoryHome" style={{textDecoration:'none',color:'white'}}>Back to Home</a> </Button> &nbsp;
 </Card.Text>
         </form>
         <br></br>
@@ -136,4 +143,3 @@ return(
 };
 
 
-export default EditItems;

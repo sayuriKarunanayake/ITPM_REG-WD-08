@@ -2,15 +2,13 @@ import React, {useState} from 'react';
 import axios from "axios";
 import {Col,Container,Row,Carousel,Button,Card,ListGroup,ListGroupItem} from 'react-bootstrap';
 import App from '../App';
-//import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
-
 
 const Home = () => {
 const [items, setItems] = useState([]);
 
 axios.get("/items")
 .then((res) => {
-    setItems (res.data); 
+    setItems (res.data); //all items display
 })
 .catch((err) =>
 console.log(err)
@@ -21,9 +19,9 @@ return(
     <Row>
     <Col>
     
-  <Carousel fade>
+  <Carousel fade> 
   
-  <Carousel.Item interval={1000}>
+  <Carousel.Item interval={1000}> 
     <img
       className="d-block w-100"
       src="https://res.cloudinary.com/hidl3r/image/upload/v1652000439/Lifestyle/istockphoto-1293762741-170667a_zhprq2.jpg"
@@ -58,26 +56,27 @@ return(
 
   <br></br>
   
+  
     <div class="banner">
      <centre> <h3>Kitchen Tools</h3> </centre>  
     </div>
       <br></br>
-    <div class="banner2">
+    <div class="banner2">  
       <centre> <h3>Electric Items</h3> </centre>  
     </div>                                                            
       <br></br>
     <div class="banner3">
       <centre> <h3>Furnitures</h3> </centre>  
     </div>
-
+<br></br>
   <Row>
     <Col>
-    
-    <center><h1>Our Products</h1></center>
+    <div className='hoimg'>
+    <center><h1>Our Products</h1></center><br></br>
     
     {items.map((item ,key) => (
       
-        <Card style={{ width: '300px', float:'left' ,padding:'30px'}}>
+        <Card style={{ width: '300px', float:'right',padding:'10px',marginRight:'10px',marginLeft:'10px'}}>
           <div className='hocard'>
         <Card.Img variant="top" src={item.itemimage} />
         <Card.Body>
@@ -96,7 +95,7 @@ return(
        </div>
       </Card>   
     ))}
- <br></br>        
+ <br></br> </div>       
 </Col>
 </Row>
 
