@@ -2,11 +2,11 @@ import React, {useState} from "react";
 import axios from "axios";
 import {Button,Card} from 'react-bootstrap';
 
-const AddItem = () => {
+const AddItem = () => { //add item
     const [itemcode , setItemcode] = useState("");
     const [category,setcategory] = useState("");
     const [itemname , setItemname] = useState("");
-    const [itemprice , setItemprice] = useState("");
+    const [itemprice , setItemprice] = useState(""); //create states
     const [itemdescription, setItemdescription] = useState("");
     const [message , setMessage] = useState("");
     const [date,setDate] = useState("");
@@ -32,18 +32,18 @@ const formData = new FormData(); //create form data object
 
     setItemcode("");
     setcategory("");
-    setItemname("");
+    setItemname(""); //set values
     setItemprice("");
     setDate("");
     setItemdescription("");
 
-    //items add
+    //display successful message or error message
     axios.post("/items/add",formData).then((res) => {
-        alert("Item added sucessfully");
-        window.location(`/allitem`)
+        alert("Item added sucessfully!");
+        window.location=`/allitems`;
     })
     .catch((err) => {
-       console.log(err);
+       alert(err); //display alert
     });
 };
 
@@ -71,7 +71,7 @@ return (
             <div className= "form-group">
                     <label for="category" className="form-label">Item Category</label>
                     <select className="form-select form-control" id="category" 
-                    onChange={(e)=>{setcategory(e.target.value);//updating state using value taken from the form 
+                    onChange={(e)=>{setcategory(e.target.value);//updating state 
                     }}required>
                         <option value="" disabled selected>Select</option>
                         <option value="Electric Items">Electric Items</option>
@@ -79,13 +79,13 @@ return (
                         <option value="Furniture">Furniture</option>
                     </select>
                     </div>
-
+                        
             <div className = "form-group" style={{marginBottom:'15px'}} id="itemname"> 
                 <label htmlFor = "itemname">Item Name</label>
                 <input
                 type = "text"
                 value = {itemname} required
-                onChange = {(e) => setItemname(e.target.value)}
+                onChange = {(e) => setItemname(e.target.value)}//updating state
                 className="form-control"
                 placeholder="Enter Item Name" /></div>
 
@@ -94,7 +94,7 @@ return (
                 <input
                 type = "text"
                 value = {itemprice} required
-                onChange = {(e) => setItemprice(e.target.value)}
+                onChange = {(e) => setItemprice(e.target.value)}//updating state
                 className="form-control"
                 placeholder="Enter Item Price" /></div>
 
@@ -102,7 +102,7 @@ return (
                 <label htmlFor = "itemdescription">Item Description</label>
                 <textarea
                 value = {itemdescription} required
-                onChange = {(e) => setItemdescription(e.target.value)}
+                onChange = {(e) => setItemdescription(e.target.value)}//updating state
                 className="form-control"
                 rows = "3"
                 placeholder="Enter Item Description" /></div>
@@ -112,7 +112,7 @@ return (
                 <input
                 value ={date}
                 type = "date" required
-                onChange = {(e) => setDate(e.target.value)}
+                onChange = {(e) => setDate(e.target.value)}//updating state
                 className="form-control"
                 placeholder="Enter Date" /></div>
 
@@ -120,11 +120,11 @@ return (
                 <label htmlFor = "file">Choose Item Image</label><br></br>
                 <input type = "file" name="itemimage" 
                 className="form-control-file" required
-                onChange = {onChangeFile}/>
+                onChange = {onChangeFile}/> 
                 </div><br></br>
 
 <Button type="submit" className=" btn btn-success"> Add Item </Button> &nbsp;
-<Button variant=" btn btn-secondary"><a href = "/allitems" style={{textDecoration:'none',color:'white'}}>Cancel</a></Button>
+<Button variant=" btn btn-secondary"><a href = "/itemandcategoryHome" style={{textDecoration:'none',color:'white'}}>Cancel</a></Button>
 </Card.Text>
         </form>
         <br></br>
