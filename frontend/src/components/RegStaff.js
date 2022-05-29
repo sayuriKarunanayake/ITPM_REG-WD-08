@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {Col,Image} from "react-bootstrap";
 
 
 export default function RegStaff(){
@@ -17,7 +18,7 @@ export default function RegStaff(){
 
     function sendData(e){
         //validations
-
+        
 
         e.preventDefault();
 
@@ -46,15 +47,15 @@ export default function RegStaff(){
 
 
     return(
-    <>
-        <div style = {{paddingTop : "50px",paddingBottom : "50px",paddingLeft:"550px"}}>
+
+        <div style = {{paddingTop : "50px",paddingBottom : "50px",paddingLeft:"550px", backgroundColor: '#E3E7E8'}}>
         <nav className="nav">
             <Link to="/adminHome" className="nav-link">Home</Link>
-        </nav><br/><br/> 
-            <table border="1" style = {{width:"50%"}}>
+        </nav><br/><br/>
+        <div className="">
+            <table style = {{width:"60%", backgroundColor: '#FACDF9',borderRadius:'1.5em'}}>
                 <br/><br/><h3 style = {{textAlign : 'center'}}>Staff Registration</h3><br/><br/>
-                <div className='container'>
-            
+                <div>
                 <form className='loginform' onSubmit = {sendData} class="px-4 py-3">
                     <div class="form-group">
                     <label for="StaffID">Staff ID</label><br/>
@@ -146,7 +147,9 @@ export default function RegStaff(){
                 <br/><br/> 
                 </div>
             </table>
-        </div>   
-    </>
+            </div>
+        </div>
+         
+   
     )
 }

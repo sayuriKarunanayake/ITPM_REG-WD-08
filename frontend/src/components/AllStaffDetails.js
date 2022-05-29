@@ -21,27 +21,27 @@ export default function AllStaffDetails(){
         getStaffList();
         
     },[]);
-
-    function onDelete(id)  {
-      const r = window.confirm("Do you really want to delete this staff member?");
-      if(r === true){
-      axios.delete(`http://localhost:8070/staff/delete/${id}`).then(()=>{
-          alert("Staff Member Deleted");
-          window.location = `/allstaff`;
-          
-      }).catch((err)=>{
-          console.log(err);
-          alert(err);
-      })
-    }
-  }
+  
+function onDelete(id)  {
+  const r = window.confirm("Do you really want to delete this staff member?");
+  if(r === true){
+  axios.delete(`http://localhost:8070/staff/delete/${id}`).then(()=>{
+      alert("Staff Member Deleted Successfully");
+      window.location = `/allstaff`;
+      
+  }).catch((err)=>{
+      console.log(err);
+      alert(err);
+  })
+}
+}
 
     return(
         <div className="container"><br/>
             <nav className="nav">
             <Link to="/adminHome" className="nav-link">Home</Link>
         </nav><br/><br/> 
-            <div className="container">
+            <div>
           <table>
           <td><form className="d-flex">
             <input 
@@ -98,11 +98,12 @@ export default function AllStaffDetails(){
                     
                     <td valign="middle">{val.regDate}</td>
                    
-                   
-
                     
-                    <td><button className="btn btn-danger custom" onClick = {() =>onDelete(val.staffID)}><a className="nounderline" style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button></td>
-
+                    <td>
+                      <button className="btn btn-warning custom"><a className="nounderline" style={{color:'white'}} ><i className="fas fa-edit"></i>&nbsp;Edit</a></button><br/><br/>
+                      <button className="btn btn-danger custom" onClick = {() =>onDelete(val.staffID)}><a className="nounderline" style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button>
+                    </td>
+                    
                   </tr>
                    ))}
                 </tbody>

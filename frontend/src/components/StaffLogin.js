@@ -57,7 +57,7 @@ export default function StaffLogin(){
 
     return(
         <>
-             <div style = {{paddingTop : "50px",paddingBottom : "50px",paddingLeft:"650px",height:"800px"}}>
+             <div style = {{paddingTop : "90px",paddingBottom : "50px",paddingLeft:"650px",height:"800px"}}>
             <table border="1" style = {{width:"40%"}}>
                 <br/><br/><h3 style = {{textAlign : 'center'}}>Staff Login</h3><br/><br/>
                 <div className='container'>
