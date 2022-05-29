@@ -48,7 +48,7 @@ axios.get("/nrequests").then(res=>{
 
 render(){
   return( 
-    <div className='addcate'>
+    <div className="addcate">
     <div className= "container py-5">
     <div className="row">
       <div className="col-lg-9 mt-2 mb-2">
@@ -56,8 +56,9 @@ render(){
         </div>
         <br></br>
 
+
 <div className="catego">
-<div className="col-lg-9 mt-2 mb-2">
+<div className="col-lg-3 mt-2 mb-2">
 </div>
 <input
 className ="form-control"
@@ -83,14 +84,15 @@ onChange={this.handleSearchArea}>
             <th scope="row"> {index+1}</th>
 
             <td> {nrequests.email}</td> 
-            <td> {nrequests.newproductrequest} </td> 
-              
+            <td> {nrequests.newproductrequest} </td>
          </tr>
     ))}
     
          </tbody></table>
          
-         <Button variant="primary"><a href = "/" style={{textDecoration:'none',color:'Black'}}>Back</a></Button>
+         <h3>......You Can Request Your Preferences......</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <Button variant="primary"><a href = "/" style={{textDecoration:'none',color:'Black'}}>Back</a></Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <Button variant="success"><a href = "/addrequest" style={{textDecoration:'none',color:'Black'}}>Add New Request</a></Button>
          
  </div></div></div>
     )

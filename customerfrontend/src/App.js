@@ -21,6 +21,7 @@ import PaymentCustomer from './components/PaymentCustomer';
 import AddNewProductRequest from './components/AddNewProductRequest';
 import Home from './components/Home';
 import ViewAllnewrequests from './components/ViewAllrequests';
+import Itemdetails from './components/Itemdetails';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
               <Route exact path="/addrequest" element={<AddNewProductRequest/>}/>
               <Route exact path="/" element={<Home/>}/>
               <Route exact path="/vnewrequests" element={<ViewAllnewrequests/>}/>
+              <Route exact path="/itemread/:id" element={<Itemdetails/>}/>
  
 
          </Routes>
