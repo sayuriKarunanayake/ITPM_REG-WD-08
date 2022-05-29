@@ -19,6 +19,7 @@ import AllCusPayments from './components/AllCusPayments';
 import PaymentCustomer from './components/PaymentCustomer';
 import AllStaffDetails from './components/AllStaffDetails';
 import AdminHome from './components/AdminHome';
+import FetchStaff from './components/FetchStaff';
 
 //charya -IT20192532
 import AddItem from './components/AddItem';
@@ -58,7 +59,7 @@ function App() {
         {/* Sayuri - IT20197032 */}
         <div className='body'>  
         <Routes>
-        <Route exact path="/stockHome" element={<StockHome />} />  
+         
         <Route exact path="/addStock" element={<AddStock />} />
         <Route exact path="/deleteStock/:id" element={<DeleteStock />} />
         <Route exact path="/viewStock" element={<DisplayStockDetails />} />
@@ -67,7 +68,7 @@ function App() {
         <Route exact path="/stockReport" element={<StockReport />} />
         <Route exact path="/cusPay" element={<AllCusPayments />} />
         <Route exact path="/allstaff" element={<AllStaffDetails />} />
-        
+        <Route exact path="/fetchstaff/:id" element={<FetchStaff />} />
         </Routes>
         </div> 
         <Routes>
@@ -75,7 +76,7 @@ function App() {
         <Route exact path="/regStaff" element={<RegStaff />} />
         <Route exact path="/addcuspay" element={<PaymentCustomer />} />
         <Route exact path="/adminHome" element={<AdminHome />} />
-
+        <Route exact path="/stockHome" element={<StockHome />} /> 
         </Routes>
 
 

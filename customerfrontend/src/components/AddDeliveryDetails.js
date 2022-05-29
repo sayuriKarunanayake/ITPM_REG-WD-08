@@ -86,7 +86,7 @@ export default function AddDelivery(){  //adding function
               </Tabs>  
 
               <Tabs sx={{ml:"auto"}}   value={value} onChange={(e,val)=>setValue(val)} >
-            <div><a href="/addpayment"><img style={{height: 70, width: 90, marginLeft:432}}   src="https://cdn-icons-png.flaticon.com/512/4108/4108042.png"  ></img></a>
+            <div><a href="/addcuspay"><img style={{height: 70, width: 90, marginLeft:432}}   src="https://cdn-icons-png.flaticon.com/512/4108/4108042.png"  ></img></a>
              NEXT STEP 3
             </div> 
               </Tabs>

@@ -37,7 +37,7 @@ export default function AllStaffDetails(){
   }
 
     return(
-        <div className="container" ><br/>
+        <div className="container"><br/>
             <nav className="nav">
             <Link to="/adminHome" className="nav-link">Home</Link>
         </nav><br/><br/> 
@@ -47,8 +47,8 @@ export default function AllStaffDetails(){
             <input 
                   className="form-control me-2" 
                   type="search" 
-                  placeholder="Search Stock"
-                  name = "searchQuerystock"
+                  placeholder="Search Staff Member"
+                  name = "searchQuerystaff"
                   onChange = {(e)=>setSearch(e.target.value)} /> 
             </form></td>
             
@@ -61,13 +61,13 @@ export default function AllStaffDetails(){
                     <th scope="col">#</th>
                     <th scope="col">Staff ID</th>
                     <th scope="col">Role</th>
-                    <th scope="col">Title</th>
+      
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
-                    <th scope="col">NIC</th>
+                    
                     <th scope="col">Phone No.</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Password</th>
+                    
                     <th scope="col">Registered Date</th>
                     <th scope="col">Actions</th>
                   
@@ -84,15 +84,18 @@ export default function AllStaffDetails(){
                 }).map((val, key)=>(
                   <tr>
                     <th valign="middle" scope="row">{key +1}</th> 
-                    <td valign="middle">{val.staffID}</td>
+                    <td valign="middle" scope="row">
+                      <a href={`/fetchstaff/${val.staffID}`} style={{textDecoration:'none'}}>
+                      {val.staffID}
+                      </a></td>
                     <td valign="middle">{val.role}</td>
-                    <td valign="middle">{val.title}</td>                    
+                                      
                     <td valign="middle">{val.first_name}</td>
                     <td valign="middle">{val.last_name}</td>
-                    <td valign="middle">{val.nic}</td>
+                   
                     <td valign="middle">{val.phoneNo}</td>
                     <td valign="middle">{val.email}</td>
-                    <td valign="middle">{val.password}</td>
+                    
                     <td valign="middle">{val.regDate}</td>
                    
                    
