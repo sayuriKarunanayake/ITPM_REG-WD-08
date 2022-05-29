@@ -29,16 +29,20 @@ export default function StaffLogin(){
                         if(res.data.staff.role === "stock manager"){
                             //Home of Stock Manager
                             history(`/stockHome`);
+                            alert("Logged in successfully! Welcome Stock manager...");
                         }
                         else if(res.data.staff.role === "supplier manager"){
                            
                             history(`/Supplier_Home`);
+                            alert("Logged in successfully! Welcome Supplier manager...");
                         }
                         else if(res.data.staff.role === "Admin"){
                             history(`/adminHome`);
+                            alert("Logged in successfully! Welcome Admin...");
                         }
                         else{
-                            history(`/itemandcategoryHome`)
+                            history(`/itemandcategoryHome`);
+                            alert("Logged in successfully! Welcome Product manager...");
                         }
 
                     }
@@ -73,18 +77,13 @@ export default function StaffLogin(){
                         setPassword(e.target.value);
                     }}/><br/>
                     </div><br/>
-                    <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="dropdownCheck"/>
-                    <label class="form-check-label" for="dropdownCheck">
-                        Remember me
-                    </label>
-                    </div><br/>
+                    
                     <button type="submit" class="btn btn-primary">Sign in</button><br/>
                 </form>
             
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/regStaff">New around here? Register</a>
-                <a class="dropdown-item" href="#">Forgot password?</a>
+                
             
                 <br/><br/> 
                 </div>

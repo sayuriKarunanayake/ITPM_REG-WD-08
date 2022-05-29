@@ -54,7 +54,7 @@ export default function FetchStock(){
             <tr><th  style={{textAlign:"left"}} scope="col">Manufacturer </th> <td style={{textAlign:"left"}}>{manufacturer}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">Supplier </th> <td style={{textAlign:"left"}}>{supplier}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">Model Name </th> <td style={{textAlign:"left"}}>{modelName}</td></tr>
-            <tr><th  style={{textAlign:"left"}} scope="col">Unit Price </th> <td style={{textAlign:"left"}}>{unitPrice}</td></tr>
+            <tr><th  style={{textAlign:"left"}} scope="col">Unit Price </th> <td style={{textAlign:"left"}}>Rs. {unitPrice}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">Specifications </th> <td style={{textAlign:"left"}}>{specifications}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">Received Date </th> <td style={{textAlign:"left"}}>{receivedDate}</td></tr>
             <tr><th  style={{textAlign:"left"}} scope="col">Qty. </th> <td style={{textAlign:"left"}}>{qty}</td></tr>
