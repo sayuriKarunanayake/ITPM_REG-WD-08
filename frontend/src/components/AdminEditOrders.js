@@ -60,7 +60,7 @@ export default function AllOrders(){
             id=Values._id;
         }else{
             //setId(id)
-            id=id
+            id=_id
             console.log('test not null cond')
 
         }
@@ -156,15 +156,18 @@ export default function AllOrders(){
     const doc = new jsPDF( orientation , unit , size ); //create document
     //pdf data
     const title = `Royal lifestyle ${itemName} order for ${username} `;
+    const Eorderid = `Order ID: ${_id} `;
      const Eitemname = `Item Name: ${itemName} `;
     const EitemCode = `Item code: ${itemCode} `;
     const Eitemcolour = `Item Colour: ${itemColour} `;
-    const Eusername = `Order owner's Usename: ${username} `;
+    const Eusername = `Order owner's Username: ${username} `;
      
      
     
     doc.setFontSize( 20 );
     doc.text (150, 70,title);
+
+    doc.text(60, 200, Eorderid); 
     doc.text(60, 250, Eitemname);  
     doc.text(60, 300, EitemCode);  
      doc.text(60, 350,  Eitemcolour); 
@@ -178,14 +181,15 @@ export default function AllOrders(){
 
     return (
 <div  className='adminorder'>  
+<div className="container"> 
         <br></br>
 
         <blockquote class="blockquote"><center>
-   <h1 class="mb-0"> Manage Order details</h1>
+   <h1 class="mb-0"> Manage Order details</h1><br></br>
    <p class="blockquote-footer">orderes from our customers....<cite title="Source Title"> </cite></p> </center>
  </blockquote>
 
-<br></br>
+<br></br><center> 
       <div className="App">
             Search <input type="text" placeholder="Search here by username" onChange={e =>{setSearch(e.target.value) }} />
           <br></br><br></br>
@@ -197,13 +201,13 @@ export default function AllOrders(){
 <thead class="thead-dark">
 <tr>
 <th>ID   </th>
-<th>Item  name</th>
-<th>item  Code</th>
-<th> item  Colour</th>
- <th>Order owner's username</th>
-<th> </th>
-<th> </th>
-<th> </th>
+<th>Item_Name</th>
+<th>Item_Code</th>
+<th>Item_Colour</th>
+ <th>OrderOwner_Name</th>
+ <th>Update</th>
+ <th>Delete</th>
+ <th>Order PDF</th>
 </tr>
 </thead>
 <tbody>
@@ -224,15 +228,16 @@ export default function AllOrders(){
             <td>{Order.itemColour}</td>
             <td>{Order.username}</td>
             
-         
-            <Button variant="warning" style={{height: 40, width: 100, marginLeft: 50}}  onClick={()=> UpdateOrderDetails(Order)}  >Update </Button>
-       
+         <td> 
+            <Button variant="warning" style={{height: 40, width: 80, marginLeft: 10}}  onClick={()=> UpdateOrderDetails(Order)}  >Update </Button>
+            </td>
+                  <td> 
 
-            <a className="btn btn-danger" style={{height: 40, width: 100, marginLeft: 50}}  onClick={() => onDelete(Order._id)} href="/updateorder">Delete</a> {' '}  
-             
-                 
-                <Button variant="outline-dark" style={{height: 40, width: 150, marginLeft: 50}}  onClick = {()=>createPDF(Order._id,Order.itemName,Order.itemCode,Order.itemColour,Order.username )} >Generate PDF</Button>
-                
+            <a className="btn btn-danger" style={{height: 40, width: 80, marginLeft: 10}}  onClick={() => onDelete(Order._id)} href="/updateorder">Delete</a> {' '}  
+            </td>
+                  <td> 
+                <Button variant="btn btn-dark" style={{height: 40, width: 130, marginLeft:10}}  onClick = {()=>createPDF(Order._id,Order.itemName,Order.itemCode,Order.itemColour,Order.username )} >Generate PDF</Button>
+                </td>
 
           </tr>
           
@@ -309,7 +314,7 @@ export default function AllOrders(){
                 
                    <a className="btn btn-info " href="/orderhome">Back</a> {' '}  
        
- </div></div> 
+ </div></center></div> </div>
   );
      
   

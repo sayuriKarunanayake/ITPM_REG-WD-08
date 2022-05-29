@@ -24,17 +24,20 @@ export default function AddDelivery(){  //adding function
   function sendData(e){  //create event send data
 
     if(  !username || !homeno || !street || !city || !contactNumber ){
-      alert("Kindly add username/contactNumber with delivery details!");
+      alert("Fields can't be empty!");
       window.location = `/adddelivery`;
       return
   }
 
     else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
-      alert("Incorrect Email type");
-      window.location = `/adddelivery`;
+      alert("Invalid Email type");
       return
   }
 
+     else if(contactNumber.trim().length !=10){
+        alert("Invalid contact No!");
+        return
+  }
    
     e.preventDefault(); //execute setData function, when click submit button
 
@@ -54,7 +57,7 @@ export default function AddDelivery(){  //adding function
      axios.post(`http://localhost:8070/delivery/adddelivery`, newDelivery).then(() =>{  //route from the backend
 
         alert("Delivery details Added.**To change delivery details please contact royallifestyle12@gmail.com**") //display if adding is successful
-        window.location = `/signin`;   //redirect to adding page
+        window.location = `/addcuspay`;   //redirect to adding page
      }).catch((err) =>{   //display error if adding is not successful
         alert(err)
      })
@@ -116,7 +119,7 @@ export default function AddDelivery(){  //adding function
   <div className="form-group"> 
 <i className="zmdi zmdi-account zmdi-hc-2x"></i>  
 <label for="contactNumber" className="labels"> Contact Number </label>
-    <input type="text" className="form-control" id="contactNumber" aria-describedby="em" placeholder="1234567890" 
+    <input type="text" className="form-control" id="contactNumber" aria-describedby="em" placeholder="1234567890"  required
     onChange={(e)=>{
       setContactNumber(e.target.value);
      }}   />
@@ -126,7 +129,7 @@ export default function AddDelivery(){  //adding function
   <div className="form-group"> 
 <i className="zmdi zmdi-account zmdi-hc-2x"></i>  
 <label for="email" className="labels"> Email Address </label>
-    <input type="email" className="form-control" id="email" aria-describedby="em" placeholder="andria12@gmail.com" 
+    <input type="email" className="form-control" id="email" aria-describedby="em" placeholder="andria12@gmail.com" required
     onChange={(e)=>{
       setEmail(e.target.value);
      }}   />
@@ -136,7 +139,7 @@ export default function AddDelivery(){  //adding function
   <div className="form-group"> 
 <i className="zmdi zmdi-account zmdi-hc-2x"></i>  
 <label for="homeno" className="labels"> Home/Office No </label>
-    <input type="text" className="form-control" id="homeno" aria-describedby="em" placeholder="12" 
+    <input type="text" className="form-control" id="homeno" aria-describedby="em" placeholder="12"  required
     onChange={(e)=>{
       setHomeno(e.target.value);
      }}   />
@@ -145,7 +148,8 @@ export default function AddDelivery(){  //adding function
   <div class="form-group">
   <i className="zmdi zmdi-email zmdi-hc-2x"></i>
   <label for="street" className="labels"> Street </label>
-    <input type="text"  class="form-control" id="street" aria-describedby="em" placeholder="flower road" onChange={(e) =>{
+    <input type="text"  class="form-control" id="street" aria-describedby="em" placeholder="flower road" required
+    onChange={(e) =>{
       setStreet(e.target.value);
      }}  />
      
@@ -154,7 +158,8 @@ export default function AddDelivery(){  //adding function
   <div class="form-group">
   <i className="zmdi zmdi-email zmdi-hc-2x"></i>
   <label for="city" className="labels"> City </label>
-    <input type="text"  class="form-control" id="city" aria-describedby="em" placeholder="clombo" onChange={(e) =>{
+    <input type="text"  class="form-control" id="city" aria-describedby="em" placeholder="clombo" required
+     onChange={(e) =>{
       setCity(e.target.value);
      }}  />
      
@@ -201,7 +206,12 @@ export default function AddDelivery(){  //adding function
 <br></br>
  
   <Button type="submit" className="btnspace"  >Submit</Button>   
+ 
   <a className="btn btn-light btn-lg"  href="/addcuspay"> Payment</a>  
+ 
+  <Button type="reset" className="btn btn-light btn-lg" >Reset</Button>
+    
+ 
     
   <br></br><br></br><br></br><br></br><br></br>
 </form>

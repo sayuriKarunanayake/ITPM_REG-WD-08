@@ -7,12 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -121,7 +115,7 @@
 .linkreg{
   position: relative;
   left: 40px;
-  font: size 45px; 
+  font-size:  45px; 
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   font-style: bold;
@@ -166,7 +160,6 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
 }
  
@@ -317,6 +310,7 @@
   width: cover;
 
 }
+ 
 
 .adminorder{
  
@@ -385,3 +379,5 @@
       height: 2000px ;
       width: 81em;
     }
+ 
+ 

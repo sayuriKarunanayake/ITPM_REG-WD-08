@@ -83,7 +83,11 @@ function App() {
         {/* charya - IT20192532*/} 
         <Routes>
           <Route exact path="/additems" element={<AddItem />} />
+ 
           <Route exact path="/edititems/:id" element={<EditItems />}/>
+ 
+          <Route exact path="/edititems" element={<EditItems />} />
+ 
           <Route exact path="/allitems" element={<AllItems />} />
           <Route exact path="/newrequests" element={<Allnewrequests />} />
           <Route exact path="/itemandcategoryHome" element={<ItemCategoryManagement />} />

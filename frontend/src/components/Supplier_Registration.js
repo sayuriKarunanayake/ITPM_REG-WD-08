@@ -66,7 +66,7 @@ export default class Supplier_Registration extends Component {
       swal("Invalid email address !", "Please enter valid email address", "error");
     }else if(Item.length < 4 ){
       swal("Invalid Item !", "Length shuld be greater than 4 !", "error");
-    }else if(Remark.length < 0 ){
+    }else if(Remark.length == 0 ){
       swal("Invalid Remark !", "", "error");
     }
     else{

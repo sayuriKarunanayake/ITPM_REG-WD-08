@@ -39,24 +39,25 @@ export default function AllFeedbacks(){
       <div className="container">
 <br></br>
       <blockquote class="blockquote"><center>
-        <h1 class="mb-0"> Complaints and Feedbacks</h1>
-        <p class="blockquote-footer">thoughts of yours<cite title="Source Title"> </cite></p></center>
+        <h1 class="mb-0"> Complaints and Feedbacks</h1><br></br>
+        <p class="blockquote-footer">thoughts of customers<cite title="Source Title"> </cite></p></center>
       </blockquote>
       
-       <br></br><br></br>
-              <div className="allEfb">
+      
+<br></br><center> 
+<div className="App">
                   
             <table class ="table table-hover border shadow  ">
               <thead class="table-dark">
                   <tr>
-                  <th scope="col"> user ID  </th>
+                  <th scope="col">   </th>
+                  <th scope="col">User ID</th>
+                  <th scope="col">Username</th>
                       <th scope="col">Number</th> 
-                      <th scope="col">Username</th> 
-                     
+                      <th scope="col">Email</th>       
                       <th scope="col">Type</th>
-                       
-                      <th scope="col">Message</th>
-                      <th></th>
+                      <th scope="col">Feedback_Message</th>
+                      <th scope="col">Manage</th>
                        
                       </tr>
                       </thead>
@@ -67,21 +68,22 @@ export default function AllFeedbacks(){
                 <th scope="row">{key +1}</th>    
                 <td>{val._id}</td>
                 <td>{val.username}</td>
-                
+                <td>{val.contactNumber}</td>
+                <td>{val.email}</td>
                 <td>  {val.type}</td>
                  
                 <td>   {val.message}</td>
                  <td> 
-                <a className="btn btn-danger  " onClick={() => onDelete(val._id)} href="/readuadmin">Delete</a> {' '}  
+                <a className="btn btn-danger  " onClick={() => onDelete(val._id)} href="/readf">Delete</a> {' '}  
                 </td>
                 </tr>
             ))}
-               </tbody> </table>
+               </tbody> </table></div></center>
                  
                </div><br></br><br></br>
-               <h3 class="topi" >We would love to hear from you🖤🖤  <a className="btn btn-primary btn-lg" href="/addf"> Add Feedback</a>  </h3> 
+               <h3 class="topi" > <a className="btn btn-primary btn-lg" href="/orderhome"> BACK</a>  </h3> 
                <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-               </div></div>
+               </div> 
                
   
                   

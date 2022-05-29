@@ -70,7 +70,7 @@ export default function AllDelivery(){
             id=Values._id;
         }else{
             //setId(id)
-            id=id
+            id=_id
             console.log('test not null cond')
 
         }
@@ -205,29 +205,31 @@ export default function AllDelivery(){
     const marginLeft = 40;
     const doc = new jsPDF( orientation , unit , size ); //create document
     //pdf data
-    const title = `Royal lifestyle ${username} orders`;
-     const Eusername = `username: ${username} `;
-    const EcontactNumber = `contactNumber: ${contactNumber} `;
-    const Eemail = `email: ${email} `;
-    const Ehomeno = `homeno: ${homeno} `;
-    const Estreet = `street: ${street} `;
-    const Ecity = `city: ${city} `;
-    const Eprovince = `province: ${province} `;
-    const EdeliveryTime = `deliveryTime: ${deliveryTime} `;
+    const title = `Royal lifestyle ${username}  orders`;
+    const Eorderid = `Delivery ID: ${_id} `; 
+    const Eusername = `Username: ${username} `;
+    const EcontactNumber = `ContactNumber: ${contactNumber} `;
+    const Eemail = `Email: ${email} `;
+    const Ehomeno = `Home No: ${homeno} `;
+    const Estreet = `Street: ${street} `;
+    const Ecity = `City: ${city} `;
+    const Eprovince = `Province: ${province} `;
+    const EdeliveryTime = `Delivery Time: ${deliveryTime} `;
      
    
     
     doc.setFontSize( 20 );
     doc.text (150, 60,title);
      
-    doc.text(60, 150, Eusername);  
+    doc.text(60, 140, Eorderid);  
+    doc.text(60, 170, Eusername);  
      doc.text(60, 200,  EcontactNumber); 
-     doc.text(60, 250,  Eemail);
-     doc.text(60, 300, Ehomeno);  
-     doc.text(60, 350, Estreet);  
-    doc.text(60, 400,  Ecity);  
-     doc.text(60, 450,  Eprovince); 
-     doc.text(60, 500,  EdeliveryTime);
+     doc.text(60, 230,  Eemail);
+     doc.text(60, 260, Ehomeno);  
+     doc.text(60, 290, Estreet);  
+    doc.text(60, 320,  Ecity);  
+     doc.text(60, 350,  Eprovince); 
+     doc.text(60, 380,  EdeliveryTime);
 
        doc.save (`Delivery-for-${username}.pdf`)  //save pdf
     }
@@ -236,12 +238,12 @@ export default function AllDelivery(){
 
 
     return (
-<div className='adminorder'> 
+<div className="adminorder"> 
         <br></br>
 
         <blockquote class="blockquote"><center>
-   <h1 class="mb-0">Manage Delivery Details</h1>
-   <p class="blockquote-footer">details of users....<cite title="Source Title"> </cite></p> </center>
+   <h1 class="mb-0">Manage Delivery Details</h1><br></br>
+   <p class="blockquote-footer">details of deliveries...<cite title="Source Title"> </cite></p> </center>
  </blockquote>
 
 <br></br>
@@ -265,7 +267,7 @@ export default function AllDelivery(){
 <th>City</th>
 <th>Province</th>
 <th>Preferred delivery Time</th>
-<th> </th>
+ 
 </tr>
 </thead>
 <tbody>
@@ -291,15 +293,13 @@ export default function AllDelivery(){
             <td>{Delivery.province}</td>
             <td>{Delivery.deliveryTime}</td>
 
-            
-            <Button variant="warning" style={{height: 40, width: 100, marginLeft: 30, marginTop: 9}} onClick={()=> UpdateDeliveryDetails(Delivery)}  >Update </Button>
-            
-
-            <a className="btn btn-danger  " style={{height: 40, width: 100, marginLeft: 30, marginTop: 9}} onClick={() => onDelete(Delivery._id)} href="/updatedelivery">Delete</a> {' '}  
-       
-                 
-                <Button variant="outline-dark" style={{height: 40, width: 150, marginLeft: 30,marginTop: 9}} onClick = {()=>createPDF(Delivery._id,Delivery.username,Delivery.contactNumber,Delivery.email,Delivery.homeno,Delivery.street,Delivery.city,Delivery.province, Delivery.deliveryTime )} >Generate PDF</Button>
-
+            <td> 
+            <Button variant="warning" style={{height: 40, width: 80, marginLeft:1, marginTop: 9}} onClick={()=> UpdateDeliveryDetails(Delivery)}  >Update </Button>
+            </td> <td> 
+            <a className="btn btn-danger  " style={{height: 40, width: 80, marginLeft: 5, marginTop: 9}} onClick={() => onDelete(Delivery._id)} href="/updatedelivery">Delete</a> {' '}  
+            </td><td> 
+                <Button variant="btn btn-dark" style={{height: 40, width: 120, marginLeft: 3,marginTop: 9}} onClick = {()=>createPDF(Delivery._id,Delivery.username,Delivery.contactNumber,Delivery.email,Delivery.homeno,Delivery.street,Delivery.city,Delivery.province, Delivery.deliveryTime )} >Generate PDF</Button>
+                </td>
 
           </tr>
           
@@ -392,9 +392,7 @@ export default function AllDelivery(){
             setDeliveryTime(e.target.value);
           }}  />
          </Form.Group>
-        
-         //username,contactNumber,email,homeno,street,city,province, deliveryTime
-   
+         
           
   
          <Button  type="submit"> Edit details</Button> 
@@ -409,7 +407,7 @@ export default function AllDelivery(){
                  <br />
                 
                    <a className="btn btn-info " href="/orderhome">Back</a> {' '}  
-       
+                   <br></br> <br></br> <br></br> <br></br>
  </div></div> 
   );
      

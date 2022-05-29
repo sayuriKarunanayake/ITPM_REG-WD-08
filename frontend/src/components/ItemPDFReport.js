@@ -50,6 +50,9 @@ const OrderreportRender = () =>{
 
     return(
         <div className="container"><br/><br/>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <a href="/adminHome">Back</a> {' '} 
+       <br></br> <br></br> <br></br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button className="btn btn-success" onClick={()=>GenerateOrderReport(reportOrder)}>Generate Report</button>
             <br/><br/>
            

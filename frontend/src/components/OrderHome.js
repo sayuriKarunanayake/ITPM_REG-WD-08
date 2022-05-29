@@ -8,8 +8,11 @@ import { purple } from "@mui/material/colors";
 
 const OrderHandler= () => {
    return(
-   <div className="fbhome">
-<br></br><br></br><br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> 
+       
+   <div className="fbhome"> <br></br><br></br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <a href="/adminHome">Back</a> {' '} 
+<br></br><br></br><br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> 
     <div>  
         <center>
          
@@ -19,14 +22,13 @@ const OrderHandler= () => {
           <Toolbar>
         
          
-          <a className="btn btn-danger btn-lg"   href="/readorder" style={{height: 50, width: 300, marginLeft: 100,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i> View Order Details</a> {' '} 
-         
-             <a className="btn btn-danger btn-lg" href="/updateorder" style={{height: 50, width: 300, marginLeft: 60,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>  Manage Order Details</a> {' '} 
-             <a className="btn btn-danger  btn-lg" href="/updatedelivery" style={{height: 50, width: 300, marginLeft: 60,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>   Manage Delivery Details</a> {' '} 
-             <a className="btn btn-danger  btn-lg" href="/readf" style={{height: 50, width: 300, marginLeft: 60,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>   Manage Feedbacks</a> {' '} 
+          
+             <a className="btn btn-danger btn-lg" href="/updateorder" style={{height: 50, width: 300, marginLeft: 70,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>  Manage Order Details</a> {' '} 
+             <a className="btn btn-danger  btn-lg" href="/updatedelivery" style={{height: 50, width: 300, marginLeft: 70,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>   Manage Delivery Details</a> {' '} 
+             <a className="btn btn-danger  btn-lg" href="/readf" style={{height: 50, width: 300, marginLeft: 70,background:'#800080'}}><i class="zmdi zmdi-info-outline"></i>   Manage Feedbacks</a> {' '} 
           
                
-        
+             <br></br><br></br><br></br>
                 
 
               </Toolbar>

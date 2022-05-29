@@ -26,7 +26,7 @@ const Header = () => {
 
         <Tabs sx={{ml:"auto"}}   value={value} onChange={(e,val)=>setValue(val)} >
             <div><a href="/"><img style={{height: 50, width: 50, marginLeft:552}} class="rounded-circle" src="https://cdn-icons-png.flaticon.com/512/219/219983.png" href="/adduser"></img></a></div>
-            <Tab LinkComponent={NavLink} to="/" label='Login'/>
+            <Tab LinkComponent={NavLink} to="/" label=''/>
         </Tabs>
     
             </Toolbar>

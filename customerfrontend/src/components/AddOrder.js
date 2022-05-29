@@ -18,8 +18,8 @@ export default function AddOrder(){  //adding function
     
   function sendData(e){  //create event send data
 
-    if( !itemName || !itemCode || !username   ){
-      alert("Please fill all the fields!");
+    if( !itemName || !itemCode || !username){
+      alert("Fill all the fields!");   
       window.location = `/adddorder`;
       return
   }
@@ -39,12 +39,12 @@ export default function AddOrder(){  //adding function
 
      axios.post(`http://localhost:8070/order/addorder`, newOrder).then(() =>{  //route from the backend
 
-        alert("order Added.") //display if adding is successful
+        alert("order Added."); //display if adding is successful
         window.location = `/adddelivery`;   //redirect to adding page
      }).catch((err) =>{   //display error if adding is not successful
         alert(err)
      })
-  }
+  } 
 
     return(
  
@@ -90,7 +90,7 @@ export default function AddOrder(){  //adding function
         <div class="form-group ">
         <i className="zmdi zmdi-account zmdi-hc-2x"></i> 
     <label for=" itemName" className="labels">Item Name</label>
-    <select class="custom-select custom-select-lg mb-3" id="itemName"  onChange={(e)=>{
+    <select class="custom-select custom-select-lg mb-3" id="itemName" required onChange={(e)=>{
       setItemName(e.target.value);
      }}   >
        <option>Choose</option>
@@ -118,7 +118,7 @@ export default function AddOrder(){  //adding function
   <div className="form-group"> 
 <i className="zmdi zmdi-account zmdi-hc-2x"></i>  
 <label for="itemCode" className="labels"> Item code </label>
-    <input type="text" className="form-control" id="itemCode" aria-describedby="em" placeholder="P123" 
+    <input type="text" className="form-control" id="itemCode" aria-describedby="em" placeholder="P123" required
     onChange={(e)=>{
     setItemCode(e.target.value);
      }}   />
@@ -153,7 +153,7 @@ export default function AddOrder(){  //adding function
   <div className="form-group"> 
 <i className="zmdi zmdi-account zmdi-hc-2x"></i>  
 <label for="username" className="labels"> Username </label>
-    <input type="text" className="form-control" id="username" aria-describedby="em" placeholder="andr123" 
+    <input type="text" className="form-control" id="username" aria-describedby="em" placeholder="andr123" required
     onChange={(e)=>{
     setUsername(e.target.value);
      }}   />
