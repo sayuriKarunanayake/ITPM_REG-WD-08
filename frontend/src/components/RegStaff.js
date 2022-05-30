@@ -41,7 +41,7 @@ export default function RegStaff(){
 
         e.preventDefault();//prevent dafult behaviour when submitting
 
-        const newStaff ={
+        const newStaff ={//new object to be passed
         staffID,
         role,
         title,
@@ -54,7 +54,7 @@ export default function RegStaff(){
         regDate
         }
         console.log(newStaff);
-
+        //code segment related to from where data get and how
         axios.post("http://localhost:8070/staff/add", newStaff).then(()=>{
             alert("Registration Sucessful!");
             window.location = `/`;

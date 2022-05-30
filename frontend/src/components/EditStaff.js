@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Button,Modal,Form, InputGroup, FormControl } from 'react-bootstrap';
 
 export default function EditStaff(){
+    //set states
     const[staffID,setstaffID] = useState("");
     const[role,setrole] = useState("");
     const[title,settitle] = useState("");
@@ -16,9 +17,10 @@ export default function EditStaff(){
     const[password,setpassword] = useState("");
     const[regDate,setregDate] = useState("");
 
-    const {id} = useParams();
+    const {id} = useParams();//to catch id parameter from url
 
     useEffect(()=>{
+        //display all details
         axios.get(`http://localhost:8070/staff/get/${id}`).then((res)=>{
             console.log(res.data);
             setstaffID(res.data.staff.staffID);
@@ -36,11 +38,11 @@ export default function EditStaff(){
             alert(err.message)
         })
     },[]);
-
+    //edit function
     function sendData(e){
         e.preventDefault();
 
-        const editStaff={
+        const editStaff={//edited values in object to be passed
             role,
             title,
             first_name,
@@ -50,7 +52,7 @@ export default function EditStaff(){
             email,
             password
         }
-
+        //code segment related to from where data get and how
         axios.put(`http://localhost:8070/staff/update/${id}`, editStaff).then(()=>{
             alert("Staff Details Updated Successfully");
             window.location = `/allstaff`;

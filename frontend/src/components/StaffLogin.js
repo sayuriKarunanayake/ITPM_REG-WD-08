@@ -2,23 +2,20 @@ import { useState } from 'react';
 import axios from 'axios';
 import { ReactSession } from "react-client-session";
 import { useNavigate } from 'react-router';
-import{
-    Label,
-    Input,
-    Button
-}
-from 'reactstrap'
+
 
 
 export default function StaffLogin(){
+    //set states
     const [staffID , setstaffID] = useState();
     const [password , setPassword] = useState();
 
     let history = useNavigate();
 
     function submit(e){
-
+        
         e.preventDefault();//prevent dafult behaviour when submitting
+        //code segment related to from where data get and how
         axios.get(`http://localhost:8070/staff/get/${staffID}`).then((res) =>{
                     console.log(res);
                     if(password !== res.data.staff.password){

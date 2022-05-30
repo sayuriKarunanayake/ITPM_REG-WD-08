@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 export default function EditStock() {
-
+    //set states
     const[stockCode,setStockCode] = useState("");
     const [category,setCategory] = useState("");
     const [manufacturer,setManufacturer]=useState(""); 
@@ -17,10 +17,10 @@ export default function EditStock() {
     const [status_avail,setAvailStatus] = useState(""); 
 
 
-    const {id} =useParams();
+    const {id} =useParams();//to catch url parameter
 
     useEffect(()=>{
-       
+       //code segment related to from where data get and how
         axios.get(`http://localhost:8070/stock/get/${id}`).then((res)=>{
             console.log(res.data);
             setStockCode(res.data.stock.stockCode);
@@ -55,7 +55,7 @@ function onSubmit(e){
         qty,
         status_avail
     }
-
+    //code segment related to from where data get and how
     axios.put(`http://localhost:8070/stock/update/${id}`, editStock).then(()=>{
         alert("Stock Details Updated");
         window.location = `/viewStock`;
