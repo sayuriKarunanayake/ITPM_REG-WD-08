@@ -20,6 +20,7 @@ import PaymentCustomer from './components/PaymentCustomer';
 import AllStaffDetails from './components/AllStaffDetails';
 import AdminHome from './components/AdminHome';
 import FetchStaff from './components/FetchStaff';
+import EditStaff from './components/EditStaff';
 
 //charya -IT20192532
 import AddItem from './components/AddItem';
@@ -69,6 +70,7 @@ function App() {
         <Route exact path="/cusPay" element={<AllCusPayments />} />
         <Route exact path="/allstaff" element={<AllStaffDetails />} />
         <Route exact path="/fetchstaff/:id" element={<FetchStaff />} />
+        <Route exact path="/editstaff/:id" element={<EditStaff />} />
         </Routes>
         </div> 
         <Routes>
