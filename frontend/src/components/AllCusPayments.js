@@ -21,6 +21,20 @@ export default function AllCusPayments(){
         
     },[]);
 
+    function onDelete(id){
+      const r = window.confirm("Do you really want to delete this payment record?");
+      if(r===true){
+        axios.delete(`http://localhost:8070/cuspayment/delete/${id}`).then(()=>{
+        alert("Paymnet Record Deleted Successfully");
+        window.location = `/cusPay`;
+        
+        }).catch((err)=>{
+            console.log(err);
+            alert(err);
+        })
+      }
+    }
+
     return(
         <div className="container"><br/>
         <nav className="nav">
@@ -50,7 +64,7 @@ export default function AllCusPayments(){
                     <th scope="col">cvv</th>
                     <th scope="col">Payment Amount</th>
                     <th scope="col">Date of Payment</th>
-                  
+                    <th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -72,6 +86,7 @@ export default function AllCusPayments(){
                     <td valign="middle">Rs. {val.payamount}</td>
                     <td valign="middle">{val.paymentDate}</td>
 
+                    <td> <button className="btn btn-danger custom" onClick = {() =>onDelete(val._id)}><a className="nounderline" style={{color:'white'}} ><i className="fas fa-trash-alt"></i>&nbsp;Delete</a></button></td>
                   </tr>
                    ))}
                 </tbody>
