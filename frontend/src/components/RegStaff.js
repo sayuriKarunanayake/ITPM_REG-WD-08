@@ -18,9 +18,28 @@ export default function RegStaff(){
 
     function sendData(e){
         //validations
-        
+        if(first_name.trim().length < 3 ){
+            alert("Please check whether your first name is correct!");
+            e.preventDefault();
+        }else if(last_name.trim().length < 4){
+            alert("Please check whether your last name is correct!");
+            e.preventDefault();
+        }else if(nic.trim().length < 10){
+            alert("Please enter valid NIC number!");
+            e.preventDefault();
+        }else if(phoneNo.trim().length < 10){
+            alert("Please enter valid phone number!");
+            e.preventDefault();
+        }else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
+            alert("Please enter valid email!");
+            e.preventDefault();
+        }else if(password.trim().length < 8){
+            alert("Password cann't be less than 8 charaters!");
+            e.preventDefault();
+        }
+        else{
 
-        e.preventDefault();
+        e.preventDefault();//prevent dafult behaviour when submitting
 
         const newStaff ={
         staffID,
@@ -44,13 +63,28 @@ export default function RegStaff(){
             console.log(err.message);
         })
     }
+    }
+
+    //demo button
+  /* demo = ()=>{
+       var staffid1= "sm123467";
+       var role1 = "supplier manager";
+       var title1 = "Mr.";
+       var fname= "Saman";
+       var lname = "Rathnayake";
+       var nic="1989005615";
+       var pnumber="0752233212";
+       var emailadd = "saman@gmail.com";
+       var pass="saman1234567";
+       var regDate="2022-05-30";
+   }*/
 
 
     return(
 
         <div style = {{paddingTop : "50px",paddingBottom : "50px",paddingLeft:"550px", backgroundColor: '#E3E7E8'}}>
         <nav className="nav">
-            <Link to="/adminHome" className="nav-link">Home</Link>
+            <Link to="/" className="nav-link">Already Registered..Login</Link>
         </nav><br/><br/>
         <div className="">
             <table style = {{width:"60%", backgroundColor: '#FACDF9',borderRadius:'1.5em'}}>
@@ -125,7 +159,7 @@ export default function RegStaff(){
                     </div><br/>
                     <div class="form-group">
                     <label for="Pwd">Password</label><br/>
-                    <input type="text" class="form-control" id="Pwd" placeholder="Enter password" maxLength={20} minLength={8} required
+                    <input type="text" class="form-control" id="Pwd" placeholder="Enter password" maxLength={20} required
                     onChange = {(e) =>{
                         setPwd(e.target.value);
                     }}/>

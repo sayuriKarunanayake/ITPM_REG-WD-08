@@ -18,7 +18,7 @@ export default function StaffLogin(){
 
     function submit(e){
 
-        e.preventDefault();
+        e.preventDefault();//prevent dafult behaviour when submitting
         axios.get(`http://localhost:8070/staff/get/${staffID}`).then((res) =>{
                     console.log(res);
                     if(password !== res.data.staff.password){

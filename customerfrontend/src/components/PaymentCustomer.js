@@ -15,7 +15,20 @@ export default function PaymentCustomer(){
 
     function sendData(e){
         //validations
-
+        if(nameOncard.trim().length < 4){
+            alert("Please check name on card and try again!");
+            e.preventDefault();
+        }else if(cardNo.trim().length < 16){
+            alert("Invalid card number!");
+            e.preventDefault();
+        }else if(cvv.trim().length < 3){
+            alert("Invalid CVV");
+            e.preventDefault();
+        }else if(payamount === "0"){
+            alert("Please enter the amount you wish to pay");
+            e.preventDefault();
+        }
+        else{
 
         e.preventDefault();//to prevent normal behavior of submit
 
@@ -38,6 +51,7 @@ export default function PaymentCustomer(){
             console.log(err.message);
         })
     }
+    }
 
 
     return(
@@ -50,49 +64,53 @@ export default function PaymentCustomer(){
                 <form className='loginform' onSubmit = {sendData} class="px-4 py-3">
                     <div class="form-group">
                     <label for="cardType">Card Type</label><br/>
-                    <input type="text" class="form-control" id="cardType" placeholder="Enter card type" required 
+                    <select className="form-select form-control" id="cardType" 
                     onChange = {(e) =>{
                         setcardType(e.target.value);
-                    }}/>
+                    }} required>
+                        <option value="" disabled selected>Select Card Type</option>
+                        <option value="Visa">Visa</option>
+                        <option value="Master">Master</option>
+                    </select>
                     </div><br/>
                     <div class="form-group">
                     <label for="nameOncard">Name on Card</label><br/>
-                    <input type="text" class="form-control" id="nameOncard" placeholder="Enter name on card" required
+                    <input type="text" class="form-control" id="nameOncard" placeholder="A.G.Andria" required
                     onChange = {(e) =>{
                         setnameOncard(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
                     <label for="cardNo">Card Number</label><br/>
-                    <input type="text" class="form-control" id="cardNo" placeholder="Enter card number" required
+                    <input type="text" class="form-control" id="cardNo" placeholder="xxxx xxxx xxxx xxxx" maxLength={16} required
                     onChange = {(e) =>{
                         setcardNo(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
                     <label for="expdate">Exp. Date</label><br/>
-                    <input type="text" class="form-control" id="expdate" placeholder="Enter exp. date" required
+                    <input type="text" class="form-control" id="expdate" placeholder="xx/xx" required
                     onChange = {(e) =>{
                         setexpdate(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
                     <label for="cvv">cvv</label><br/>
-                    <input type="text" class="form-control" id="cvv" placeholder="Enter cvv" required
+                    <input type="text" class="form-control" id="cvv" placeholder="xxx" maxLength={3} required
                     onChange = {(e) =>{
                         setcvv(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
                     <label for="payamount">Payment Amount(Rs.)</label><br/>
-                    <input type="text" class="form-control" id="payamount" placeholder="Enter amount" required
+                    <input type="text" class="form-control" id="payamount" placeholder="Rs. xxxx.xx" required
                     onChange = {(e) =>{
                         setpayamount(e.target.value);
                     }}/>
                     </div><br/>
                     <div class="form-group">
                     <label for="paymentDate">Date of Payment</label><br/>
-                    <input type="date" class="form-control" id="paymentDate" placeholder="Enter date of payment" required
+                    <input type="date" class="form-control" id="paymentDate" required
                     onChange = {(e) =>{
                         setpaymentDate(e.target.value);
                     }}/><br/>
