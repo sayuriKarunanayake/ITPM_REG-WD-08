@@ -40,5 +40,16 @@ let CusPayment = require("../models/cuspayment");
 
     })
 
+    //delete route
+    router.route("/delete/:id").delete(async(req,res)=>{
+        let payid = req.params.id;
+
+        await CusPayment.findByIdAndDelete(payid).then(()=>{
+            res.status(200).send({status:"Payment details deleted"});
+        }).catch((err)=>{
+            console.log(err.message);
+            res.status(500).send({status:"Error occured while deleting", error:err.message});
+        })
+    })
 
 module.exports = router;
