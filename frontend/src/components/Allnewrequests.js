@@ -57,7 +57,7 @@ axios.get("/nrequests").then(res=>{
 render(){
   return( 
 
- 
+ <div className="addcate">
     <div className= "container py-5">
     <div className="row">
       <div className="col-lg-9 mt-2 mb-2">
@@ -105,7 +105,7 @@ onChange={this.handleSearchArea}>
          
          <Button variant="primary"><a href = "/itemandcategoryHome" style={{textDecoration:'none',color:'Black'}}>Back to Home</a></Button>
          
- </div></div>
+ </div></div></div>
     )
 
 }}

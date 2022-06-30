@@ -111,8 +111,8 @@ render(){
  </div>
 
 
-<Button variant="primary"> <a href = "#" type="submit" style={{textDecoration:'none',color:'Black'}}onClick={this.onSubmit}>Send Request</a></Button> &nbsp;
-<Button variant="primary"> <a href = "/vnew" type="submit" style={{textDecoration:'none',color:'Black'}}>Cancel</a></Button> &nbsp;
+<Button variant="success"> <a href = "#" type="submit" style={{textDecoration:'none',color:'Black'}}onClick={this.onSubmit}>Send Request</a></Button> &nbsp;
+<Button variant="secondary"> <a href = "/"  style={{textDecoration:'none',color:'Black'}}>Cancel</a></Button> &nbsp;
 
 
 </Card.Text>

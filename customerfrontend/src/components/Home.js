@@ -72,15 +72,19 @@ return(
   <Row>
     <Col>
     <div className='hoimg'>
-    <center><h1>Our Products</h1></center><br></br>
-    
-    {items.map((item ,key) => (
+      <blockquote class="blockquote"><center>
+      <h1>New Arrivals</h1>
+      <p class="blockquote-footer">Light the candles. Pour the wine. Let’s Shop.<cite title="Source Title"></cite></p></center>
+      
+      </blockquote>
+     {items.map((item ,key) => (
       
         <Card style={{ width: '300px', float:'right',padding:'10px',marginRight:'10px',marginLeft:'10px'}}>
           <div className='hocard'>
         <Card.Img variant="top" src={item.itemimage} />
         <Card.Body>
-          <Card.Title>{item.itemname}</Card.Title>
+          <a href={`/itemread/${item._id}`} style={{textDecoration:'none'}} ><Card.Title>{item.itemname}</Card.Title></a>
+          
         
           <ListGroup className="list-group-flush">
           <ListGroupItem>{item.itemcode}</ListGroupItem>
